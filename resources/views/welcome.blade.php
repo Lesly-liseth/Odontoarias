@@ -120,33 +120,33 @@
     <section id="contact" class="contact">
       <div class="container" data-aos="fade-up">
         <div class="section-title">
-          <h2>Contact</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+          <h2>Contáctanos</h2>
+          <p>¡Contáctanos para una atención personalizada y soluciones de cuidado bucal excepcionales! Estamos aquí para responder a tus preguntas, agendar citas y ayudarte en tus necesidades dentales. No dudes en comunicarte con nosotros y dar el primer paso hacia una sonrisa saludable y radiante. Tu bienestar bucodental es nuestra prioridad. </p>
         </div>
         <div class="row">
           <div class="col-lg-7">
             <div class="info">
               <div class="address">
                 <i class="bi bi-geo-alt"></i>
-                <h4>Location:</h4>
-                <p>A108 Adam Street, New York, NY 535022</p>
+                <h4>Ubicación:</h4>
+                <p>Villaflora. Juan de Arguello Oe1-133 y Pedro Alfaro</p>
               </div>
               <div class="email">
                 <i class="bi bi-envelope"></i>
                 <h4>Email:</h4>
-                <p>info@example.com</p>
+                <p>lichi1492@hotmail.es</p>
               </div>
               <div class="phone">
                 <i class="bi bi-phone"></i>
-                <h4>Call:</h4>
-                <p>+1 5589 55488 55s</p>
+                <h4>Teléfono:</h4>
+                <p>098 416 4124</p>
               </div>
             </div>
         </div>
 
         <div class="col-lg-5">
           <div class="map">
-              <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621" frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3984.358123731577!2d-78.521857!3d-0.243688!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91d59909ec52dd65%3A0x134c59da84ea8bae!2sOdonto%20Arias!5e0!3m2!1sen!2sus!4v1630207261707!5m2!1sen!2sus" frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen></iframe>
             </div>
           </div>
         </div>

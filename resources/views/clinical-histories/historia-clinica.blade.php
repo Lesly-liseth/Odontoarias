@@ -117,7 +117,7 @@
     </div>
     <div class="espacio"></div>
     <div class="fila">
-    <div class="cuadrado" id="100" data-number="100">NS</div>
+        <div class="cuadrado" id="100" data-number="100" style="background-color: blue; width: 150px;">Nuevo Servicio</div>
     </div>
 
 <table id="tabla-diagnosticos" class="table">
