@@ -4,6 +4,7 @@ const searchButton = document.getElementById('boton');
 const perfil_usuario = sessionStorage.getItem('idRol');
 const videntity_card_user = sessionStorage.getItem('identity_card_user');
 
+console.log(videntity_card_user);
 // Función para mostrar el modal de advertencia con un mensaje específico
     function showWarningModal(message) {
         const warningModal = document.getElementById("warning");

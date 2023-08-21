@@ -395,14 +395,20 @@ function showCitas() {
         identity_card_user:identity_card_user
       }
     };
+    
+    if(perfil_usuario==3 && id_status==2){
+        if(videntity_card_user===identity_card_user){
+          $('#calendar').fullCalendar('renderEvent', newEvent, true);
+        }
+      }else{
+        $('#calendar').fullCalendar('renderEvent', newEvent, true);
+      }
 
-    $('#calendar').fullCalendar('renderEvent', newEvent, true);
-
-    });
-  } else {
-    // Si no hay pacientes en la respuesta, mostramos un mensaje o hacemos algo adecuado para tu caso
+      });
+    } else {
+      // Si no hay pacientes en la respuesta, mostramos un mensaje o hacemos algo adecuado para tu caso
+    }
   }
-}
 
 
 async function agendar(idCita,evento,idpaciente,event){
