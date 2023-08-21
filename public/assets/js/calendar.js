@@ -310,7 +310,6 @@ document.addEventListener('DOMContentLoaded', function() {
       });
       //console.log(response);
       if (response.ok) {
-        hideLoader(); // Hide the loader when the response is successful
         showWarningModal('Disponibilidad guardado exitosamente');
         //resetForm();
         //closeModal();
@@ -395,7 +394,7 @@ function showCitas() {
         identity_card_user:identity_card_user
       }
     };
-    
+
     if(perfil_usuario==3 && id_status==2){
         if(videntity_card_user===identity_card_user){
           $('#calendar').fullCalendar('renderEvent', newEvent, true);
