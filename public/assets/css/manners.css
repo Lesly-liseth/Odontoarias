@@ -1,0 +1,28 @@
+/* Estilos para el modal */
+.modal-warning {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.8); /* Fondo opaco (color negro) */
+    z-index: 999; /* Asegura que el modal esté encima de todo el contenido */
+  }
+
+  /* Ajusta los estilos según sea necesario para el contenido del modal */
+  .modal-warning .modal-content {
+    padding: 20px;
+    max-width: 400px;
+    margin: 100px auto;
+    background-color: #72C3FA; /* Celeste claro */
+    color: #000; /* Color del texto (negro) */
+    text-align: center; /* Centrar el texto */
+  }
+
+  /* Ajusta los estilos para el párrafo dentro del modal */
+  .modal-warning .modal-content p {
+    margin: 0;
+    padding: 10px;
+    background-color: #72C3FA; /* Celeste claro */
+  }

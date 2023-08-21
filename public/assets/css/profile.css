@@ -1,0 +1,169 @@
+body {
+    background: linear-gradient(to bottom, #bce6f5, #39C1FC);
+    background-attachment: fixed; /* Mantener el fondo fijo */
+  }
+
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin-top: 1cm;
+  }
+
+  .profile-section,
+  .password-section {
+    width: 450px;
+    padding: 20px;
+    background-color: #D6ECF5;
+    text-align: center;
+    margin: auto;
+    border-radius: 10px;
+  }
+
+  /* Agregamos un espacio de 10 cm en la parte inferior del contenedor */
+  .container {
+    margin-bottom: 8cm;
+  }
+
+  .profile-picture {
+    position: relative;
+    margin-bottom: 20px;
+  }
+
+  .profile-picture img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+
+  .profile-picture input[type="file"] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+  }
+
+  .profile-picture label {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #ffffff;
+    color: #000000;
+    padding: 8px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+  .form-group {
+    margin-bottom: 10px;
+    text-align: left;
+  }
+
+  label {
+    display: block;
+  }
+
+input[type="text"],
+input[type="email"],
+input[type="tel"]{
+    width: 100%;
+    padding: 10px;
+    font-size: 12px;
+    border: 2px solid gray;
+    border-radius: 5px;
+}
+/* Estilos para el input de contraseña */
+#password,
+#password_current,
+#confirm_password {
+    width: 100%;
+    padding: 10px;
+    font-size: 12px;
+    border: 2px solid gray;
+    border-radius: 5px; /* Estilo original del input */
+    border-radius: 5px 5px 5px 5px; /* Esquinas ovaladas en la izquierda */
+    position: relative; /* Agrega posición relativa para alinear el ícono del ojo */
+}
+
+  /* campo descripcion */
+.textarea-description {
+    height: 4cm;
+    width: 100%;
+    padding: 10px;
+    font-size: 12px;
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 5px;
+  }
+
+  #subir-imagen-button,
+  #guardar-button,
+  #guardar-contraseña {
+      background-color: blue;
+      color: #ffffff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+  }
+
+  #subir-imagen-button:hover,
+  #guardar-button:hover,
+  #guardar-contraseña:hover {
+      background-color: darkblue;
+  }
+
+  button:disabled {
+    background-color: #9e9e9e;
+    cursor: not-allowed;
+  }
+
+/* mensajes de error en las validaciones*/
+.error-message {
+    display: block;
+    color: red;
+    font-size: 12px;
+  }
+
+/* Media query para dispositivos con ancho de pantalla igual o menor a 768px */
+@media (max-width: 480px) {
+    .container {
+      flex-direction: column;
+      padding: 10px; /* Ajustamos el padding para evitar desborde */
+      margin-bottom: 16cm !important; /* Espacio de 10% del alto de la ventana en la parte inferior */
+    }
+
+    .profile-section,
+    .password-section {
+      width: 100%;
+      max-width: 450px; /* Limitamos el ancho máximo a 450px */
+      margin: 10px auto; /* margen para centrar los contenedores */
+      margin-right: 5px; /* Agrega un espacio de 2px en la parte derecha */
+    }
+    .profile-section {
+        margin-bottom: 10px; /* Agrega un espacio de 2px en la parte inferior */
+      }
+
+    .profile-picture img {
+      width: 120px; /* Reducimos el tamaño de la imagen */
+      height: 120px;
+    }
+
+    .profile-picture label {
+      font-size: 10px; /* Reducimos el tamaño de la fuente */
+      padding: 6px; /* Reducimos el padding del label */
+    }
+
+    .textarea-description {
+      height: 3cm; /* Reducimos la altura del campo de descripción */
+    }
+
+    .profile-section {
+      margin-top: 15cm; /* Espacio de 5 cm entre la parte superior y el contenedor */
+    }
+  }

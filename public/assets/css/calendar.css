@@ -1,0 +1,163 @@
+html,body {
+    background: linear-gradient(to bottom, #bce6f5, #39C1FC);
+    background-attachment: fixed;
+    font-family: Arial;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+#calendar-container {
+    height: 100%;
+    margin-top: 00px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#calendar {
+    max-width: 700px;
+}
+
+
+.fc-time-grid .fc-slats tr {
+    flex: 0 0 auto;
+    height: 50px;
+}
+
+.fc-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.fc-toolbar .fc-prev-button,
+.fc-toolbar .fc-next-button {
+    width: 30px;
+    height: 30px;
+    border-radius: 3px;
+    background-color: #f8f9fa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.fc-toolbar .fc-prev-button:hover,
+.fc-toolbar .fc-next-button:hover {
+    background-color: #e9ecef;
+}
+
+.fc-toolbar .fc-prev-button i,
+.fc-toolbar .fc-next-button i {
+    font-size: 10px;
+}
+
+.disponible-event {
+    background-color: green !important;
+    border-color: green !important;
+    color: white !important;
+}
+
+.disponible-event .modal-dialog {
+    background-color: green !important;
+}
+
+.agendado-event {
+    background-color: skyblue !important;
+    border-color: skyblue !important;
+    color: white !important;
+}
+
+.agendado-event .modal-dialog {
+    background-color: skyblue !important;
+}
+
+/*Estilo del modal*/
+/* Header style */
+#availabilityModal .modal-header {
+    background-color: #a9d9f7;
+  }
+
+  /* Body style */
+  #availabilityModal .modal-body {
+    background-color: #d6ecf5;
+  }
+
+  /* Footer style */
+  #availabilityModal .modal-footer {
+    background-color: #a9d9f7;
+  }
+
+  #availabilityModal.modal {
+    margin-top: 60px;
+  }
+  /* Estilos de los botones*/
+/* Cambia el color de fondo de los botones Agendar, Liberar y Reagendar cuando se les hace hover */
+.btn.btn-success.button:hover {
+    background-color: darkblue;
+  }
+
+  /* Cambia el color de texto y el color de fondo de los botones en el modal footer */
+  .modal-footer button.btn.btn-success.button {
+    color: white;
+    background-color: blue;
+  }
+
+  /* Cambia el color de fondo de los botones en el modal footer cuando se les hace hover */
+  .modal-footer button.btn.btn-success.button:hover {
+    background-color: darkblue;
+  }
+
+  /* Cambia el color de texto y el color de fondo del botón Cancelar */
+  .modal-footer button.btn.btn-danger.button {
+    color: white;
+    background-color: red;
+  }
+
+  /* Cambia el color de fondo del botón Cancelar cuando se le hace hover */
+  .modal-footer button.btn.btn-danger.button:hover {
+    background-color: darkred;
+  }
+
+
+/* Media queries for responsiveness */
+@media screen and (max-width: 768px) {
+    #calendar-container {
+        margin-top: 20px; /* Adjust the margin for smaller screens */
+    }
+
+    #calendar {
+        max-width: 90%; /* Adjust the width of the calendar for smaller screens */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #calendar-container {
+        margin-top: 40px; /* Further adjust the margin for even smaller screens */
+    }
+
+    #calendar {
+        max-width: 100%; /* Adjust the width to take up the full width for small screens */
+    }
+
+    .fc-time-grid .fc-slats tr {
+        height: 40px; /* Adjust the height of the time slots for small screens */
+    }
+
+    .fc-toolbar {
+        flex-direction: column; /* Stack the toolbar buttons vertically for small screens */
+    }
+
+    .fc-toolbar .fc-prev-button,
+    .fc-toolbar .fc-next-button {
+        width: 40px; /* Increase the width of the prev/next buttons for small screens */
+        height: 40px; /* Increase the height of the prev/next buttons for small screens */
+    }
+
+    .fc-toolbar .fc-prev-button i,
+    .fc-toolbar .fc-next-button i {
+        font-size: 12px; /* Increase the font size of the prev/next button icons for small screens */
+    }
+}

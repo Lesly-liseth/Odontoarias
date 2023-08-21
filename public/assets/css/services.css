@@ -1,0 +1,214 @@
+@import "https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css";
+html,body {
+    background: linear-gradient(to bottom, #bce6f5, #39C1FC);
+    background-attachment: fixed;
+    font-family: Arial;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+footer {
+    background-color: #c2e8ff;
+    padding: 10px;
+    text-align: center;
+}
+
+/* header */
+.title {
+    font-size: 50px;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 30px;
+}
+
+/* main */
+.main-content {
+    height: 82%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.crud-container {
+    max-width: 30cm;
+    padding: 2rem 3rem;
+    box-shadow: 0 0 1rem 0 rgb(61, 64, 91);
+    border-radius: 0.5rem;
+    background-color: #c2e8ff; /* Color celeste claro */
+    max-height: 17cm;
+    overflow-x: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2cm;
+}
+
+.table {
+    background-color: #72beed; /* Color celeste claro */
+    max-height: 5cm;
+    overflow-y: auto;
+    overflow-x: hidden;
+    margin-left: auto; /* Margen automático a la izquierda y derecha */
+    margin-right: auto;
+    width: calc(100% - 6rem); /* Restamos el doble del padding para ajustar el ancho */
+}
+
+/* Agregar Nuevo odontologo */
+#modal.modal {
+    margin-top: 20px;
+  }
+
+  /* Modal de Edición */
+  #editModal.modal {
+    margin-top: 20px;
+  }
+
+.crud-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.crud-title {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.search-bar {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+}
+
+.search-bar input {
+    margin-right: 5px;
+}
+
+.crud-container h1 {
+    font-weight: bold;
+    font-size: 24px;
+    margin: 0;
+    margin-bottom: 1rem;
+}
+
+/* estilo botón */
+.button span {
+    margin-left: 10px;
+}
+
+/* Cambios de color */
+.crud-header button.button,
+.modal-card-foot button.button {
+    color: white;
+    background-color: blue;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.crud-header button.button:hover,
+.modal-card-foot button.button:hover {
+    background-color: darkblue;
+}
+
+#register-button {
+    color: white;
+    background-color: blue;
+    border: none;
+    padding: 10px 10px;
+    margin-top: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#register-button:hover {
+    background-color: darkblue;
+}
+
+.button.is-link.is-light {
+    background-color:  #ef4141;
+    color: white;
+}
+
+.modal-card-head {
+    background-color: #a9d9f7; /* Color celeste claro */
+}
+
+.modal-card-body {
+    background-color: #d6ecf5; /* Color celeste claro */
+}
+
+.modal-card-foot {
+    background-color: #a9d9f7; /* Color celeste claro */
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 5px;
+}
+
+/* colores de los botones de editar y el status*/
+/* Botón Editar (color morado) */
+.btn-edit {
+    background-color: #7B57B9;
+    color: white;
+}
+
+/* Botón eliminar */
+.btn-delete {
+    background-color: rgb(232, 72, 72);
+    color: white;
+}
+
+/* Mensajes de error y éxito */
+.success-message {
+    display: none;
+    color: green;
+    font-weight: bold;
+}
+
+.error-message {
+    display: none;
+    color: red;
+    font-weight: bold;
+}
+
+/* Estilo del modal */
+#modal.modal .modal-card{
+    height: 6.5cm;
+}
+#editModal .modal-card {
+    height: 7cm;
+}
+
+/* Responsive classes */
+@media screen and (max-width: 480px) {
+    .main-content {
+        height: auto;
+    }
+
+    .table {
+        max-height: none;
+    }
+
+    .crud-container {
+        max-height: none;
+    }
+}
+

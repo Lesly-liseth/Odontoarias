@@ -1,0 +1,342 @@
+/* seccion de login */
+body {
+    background: linear-gradient(to bottom, #bce6f5, #39C1FC);
+      font-family: Arial;
+      min-height: 100vh;
+      background-attachment: fixed; /* Mantener el fondo fijo */
+  }
+
+  .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+  .left-section,
+  .right-section {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .left-section img {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 10px;
+  }
+
+  .rectangle {
+      background-color: #D6ECF5;
+      width: 12.5cm;
+      height: 13.5cm;
+      padding: 1cm;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border-radius: 10px;
+    }
+
+  .user-image {
+    width: 5cm;
+    height: 5cm;
+    margin-bottom: 0.5cm;
+  }
+
+  .form-group {
+    margin-bottom: 0.5cm;
+  }
+
+  .forgot-password,
+  .register,
+  .login {
+    margin-bottom: 0.5cm;
+    color: rgb(6, 36, 205);
+    text-decoration: none;
+  }
+
+  /* Estilo para el botón Ingresar */
+  .btn-ingresar {
+      color: white;
+      background-color: blue;
+      padding: 0.5cm 1cm;
+      border: none;
+      border-radius: 5px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    .btn-ingresar:hover {
+      background-color: darkblue;
+    }
+
+    /* Estilo para el botón Regresar */
+    .btn-cancelar {
+      color: white;
+      background-color: rgb(165, 10, 236);
+      padding: 0.5cm 1cm;
+      border: none;
+      border-radius: 5px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    .btn-cancelar:hover {
+      background-color: #734db5;
+    }
+
+
+  /* seccion de Registro */
+  .containerRegistro {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100%;
+    }
+
+    .registration-section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%; /* Asegura que el contenido ocupe todo el ancho del contenedor */
+    }
+
+    .registration-rectangle {
+      background-color: #D6ECF5;
+      width: 400px;
+      padding: 20px;
+      border-radius: 10px;
+      margin: 20px;
+    }
+
+    h2 {
+      text-align: center;
+      margin-top: 0; /* Asegura que el título no tenga margen superior */
+    }
+
+  /* estilos de la imagen */
+  .profile {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .profile img {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+
+    .profile input[type="file"] {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      cursor: pointer;
+    }
+
+    .profile label {
+      margin-top: 10px;
+      color: white;
+      background-color: blue;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .subir-imagen-button {
+      color: white;
+      background-color: blue;
+      border: none;
+      padding: 10px 20px;
+      margin-top: 10px;
+      font-size: 12px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+  /* login y registro */
+  label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-size: 14px;
+  }
+
+  /* login y registro */
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="password"] {
+    width: 90%;
+    padding: 10px;
+    font-size: 12px;
+    border: 2px solid gray;
+    border-radius: 5px;
+  }
+
+  button.btn-registro {
+      color: white;
+      background-color: blue;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      font-size: 14px;
+      cursor: pointer;
+  }
+
+  .btn-registro:hover {
+  background-color: darkblue;
+  }
+  /* fin de seccion de registro */
+
+  /* mensajes de error en las validaciones*/
+  .error-message {
+      display: block;
+      color: red;
+      font-size: 12px;
+    }
+
+
+  /* inicio de seccion de Recuperar contraseña */
+  .rectangle-Rc {
+    width: 550px;
+    padding: 650px;
+    padding: 50px;
+    background-color: #D6ECF5;
+    text-align: center;
+  }
+
+  /* .logo {
+    width: 100px;
+    margin-bottom: 20px;
+  } */
+
+  .message {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+
+  .blue-button {
+      color: white;
+      background-color: blue;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      font-size: 14px;
+      cursor: pointer;
+  }
+
+  .blue-button:hover {
+  background-color: darkblue;
+  }
+
+  .blue-cancelar {
+      background-color: #ef4141;
+      color: #ffffff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+  .blue-cancelar:hover {
+      background-color: rgb(159, 34, 34);
+    }
+
+  /* Fin de seccion de recuperar contraseña */
+
+  /* inicio de la seccion codigo */
+
+  .resend-link {
+    display: block;
+    margin-bottom: 20px;
+    color: rgb(6, 36, 205);
+    text-decoration: none;
+
+  }
+
+  /* Fin de la seccion codigo */
+
+
+  /* Inicio de la seccion Nueva contraseña */
+
+  /* .message {
+    font-size: 18px;
+    margin-bottom: 10px;
+  } */
+
+  .NC-button {
+      background-color: blue;
+      color: #ffffff;
+      padding: 10px 20px;
+      margin: 20px;
+      border: none;
+      border-radius: 5px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    .NC-button:hover {
+    background-color: darkblue;
+    }
+
+  /* modal de advertencias*/
+  .modal-background {
+      background-color: #84DAFF;
+    }
+
+    .box {
+      background-color: #D6ECF5;
+    }
+
+    .has-text-danger {
+      color: red;
+    }
+
+
+  /* Fin de la seccion nueva contraseña */
+
+  /* Media queries para dispositivos móviles y tablets */
+  @media (max-width: 480px) {
+      .container {
+        flex-direction: column;
+        padding: 20px;
+      }
+
+      .left-section,
+      .right-section {
+        flex: none;
+        width: 100%;
+      }
+
+      .rectangle {
+        width: 100%;
+        height: auto;
+        padding: 20px;
+      }
+
+      .user-image {
+        width: 150px;
+        height: 150px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .registration-rectangle {
+        width: 90%;
+        margin: 10px;
+      }
+
+      .rectangle-Rc {
+        width: 100%;
+        padding: 20px;
+      }
+    }

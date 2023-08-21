@@ -1,0 +1,27 @@
+/* Estilos para el ícono del ojo */
+#eye-icon, #confirm-eye-icon {
+    cursor: pointer;
+    font-size: 16px; /* Ajusta el tamaño del ícono */
+    color: #767676; /* Ajusta el color del ícono */
+  }
+
+  /* Estilos para el botón del ojo */
+  .eye-btn {
+    background: transparent;
+    border: none;
+    padding: 0; /* Elimina el relleno del botón */
+  }
+
+  /* Posicionamiento del ícono del ojo dentro del input */
+  .input-group {
+    align-items: center; /* Centrar verticalmente los elementos dentro del contenedor */
+    position: relative;
+  }
+
+  .eye-btn {
+    position: absolute;
+    top: 50%;
+    right: 25px; /* Ajusta la posición del botón de ojo hacia la derecha */
+    transform: translateY(-50%); /* Centrar verticalmente el botón de ojo */
+    z-index: 1;
+  }
