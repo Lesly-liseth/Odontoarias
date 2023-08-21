@@ -257,3 +257,31 @@ body {
   .modal-item.selected {
     background-color: rgba(0, 0, 0, 0.1);
   }
+
+  /* Estilos para tamaños de pantalla pequeños */
+@media screen and (max-width: 768px) {
+    .title {
+      font-size: 6vw;
+      margin-top: 15vh;
+    }
+
+    .container {
+      max-width: 100%;
+      padding: 1rem;
+      margin: 2vh 0;
+    }
+  }
+
+  /* Estilos para tamaños de pantalla muy pequeños */
+  @media screen and (max-width: 480px) {
+    .title {
+      font-size: 8vw;
+      margin-top: 20vh;
+    }
+
+    .container {
+      max-width: 100%;
+      padding: 1rem;
+      margin: 1vh 0;
+    }
+  }
