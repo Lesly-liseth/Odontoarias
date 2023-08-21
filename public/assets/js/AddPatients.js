@@ -155,7 +155,7 @@ function showPatients() {
             <button class='btn-edit' data-id="${patient.id}" data-toggle="modal" data-target="#editModal">Editar</button>
           </td>
           <td>
-          <button class='btn-agendar' onclick='agendarCita(${identity_card_user});' data-id="${identity_card_user}">Agendar</button>
+          <button class='btn-agendar' onclick='agendarCita(${identity_card_user});' data-id="${identity_card_user}">Agendar Cita</button>
           </td>
         </tr>
       `;
@@ -219,7 +219,7 @@ function showFilteredPatients(filteredPatients) {
             <button class='btn-edit' data-id="${patient.id}" data-toggle="modal" data-target="#editModal">Editar</button>
           </td>
           <td>
-          <button class='btn-agendar' onclick='agendarCita("${patient.identity_card_user}")' data-id="${patient.identity_card_user}">Agendar</button>
+          <button class='btn-agendar' onclick='agendarCita("${patient.identity_card_user}")' data-id="${patient.identity_card_user}">Agendar Cita</button>
           </td>
         </tr>
       `;
