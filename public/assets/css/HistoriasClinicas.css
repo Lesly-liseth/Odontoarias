@@ -1,14 +1,14 @@
 /* @import "https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"; */
 body {
-    background: linear-gradient(to bottom, #84DAFF, #37517e);
+    background: linear-gradient(to bottom, #bce6f5, #39C1FC);
     font-family: Arial;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
     min-height: 100vh; /* Asegura que el fondo se extienda al menos al tamaño de la pantalla */
     background-attachment: fixed; /* Mantener el fondo fijo */
-    position: relative; /* Agrega esta propiedad para crear un punto de referencia para el posicionamiento absoluto */
+    position: relative;
+    align-items: center;
 }
 
   header {
@@ -258,30 +258,46 @@ body {
     background-color: rgba(0, 0, 0, 0.1);
   }
 
-  /* Estilos para tamaños de pantalla pequeños */
+/* Estilos para tamaños de pantalla pequeños */
 @media screen and (max-width: 768px) {
     .title {
-      font-size: 6vw;
-      margin-top: 15vh;
+      font-size: 1.5rem;
+      margin-top: 3rem;
+    }
+
+    input[type="text"],
+    .btn-guardar,
+    .button.is-success {
+      font-size: 0.8rem;
+      padding: 0.5rem 1rem;
     }
 
     .container {
-      max-width: 100%;
+      width: 100%;
+      align-items: flex-start;
       padding: 1rem;
-      margin: 2vh 0;
+      background-color: #c2e8ff;
     }
   }
 
   /* Estilos para tamaños de pantalla muy pequeños */
   @media screen and (max-width: 480px) {
     .title {
-      font-size: 8vw;
-      margin-top: 20vh;
+      font-size: 1rem;
+      margin-top: 3rem;
+    }
+
+    input[type="text"],
+    .btn-guardar,
+    .button.is-success {
+      font-size: 0.7rem;
+      padding: 0.3rem 0.7rem;
     }
 
     .container {
-      max-width: 100%;
+      width: 100%;
+      align-items: flex-start;
       padding: 1rem;
-      margin: 1vh 0;
+      background-color: #c2e8ff;
     }
   }
