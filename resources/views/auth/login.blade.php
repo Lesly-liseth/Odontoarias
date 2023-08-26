@@ -3,19 +3,19 @@
 <head>
   <title>Página de Inicio</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
-  <link rel="stylesheet" type="text/css" href="{{ asset('public/assets/css/auth.css') }}">
-  <link rel="stylesheet" type="text/css" href="{{ asset('public/assets/css/manners.css') }}">
-  <link rel="stylesheet" type="text/css" href="{{ asset('public/assets/css/eye.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/auth.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/manners.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/eye.css') }}">
 </head>
 <body>
 
   <div class="container">
     <div class="left-section">
-      <img src="{{ asset('public/assets/img/auth/logo.jpg') }}" alt="Imagen Izquierda">
+      <img src="{{ asset('assets/img/auth/logo.jpg') }}" alt="Imagen Izquierda">
     </div>
     <div class="right-section">
       <div class="rectangle">
-        <img src="{{ asset('public/assets/img/auth/usuario.png') }}" alt="Imagen de Usuario" class="user-image">
+        <img src="{{ asset('assets/img/auth/usuario.png') }}" alt="Imagen de Usuario" class="user-image">
         <h1>{{ Auth::user() }}</h1>
         <form id="login-form" method="POST" action="/ingresar">
           @csrf
