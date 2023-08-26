@@ -3,15 +3,15 @@
 <head>
   <title>Página de Inicio</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
-  <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/auth.css') }}">
-  <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/manners.css') }}">
-  <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/eye.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ asset('public/assets/css/auth.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ asset('public/assets/css/manners.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ asset('public/assets/css/eye.css') }}">
 </head>
 <body>
 
   <div class="container">
     <div class="left-section">
-      <img src="{{ asset('assets/img/auth/logo.jpg') }}" alt="Imagen Izquierda">
+      <img src="{{ asset('public/assets/img/auth/logo.jpg') }}" alt="Imagen Izquierda">
     </div>
     <div class="right-section">
       <div class="rectangle">
@@ -48,7 +48,7 @@
   <!-- Modal de advertencia -->
   @include('components.modalWarning')
 
-  <script src="{{ asset('assets/js/login.js') }}"></script>
-  <script src="{{ asset('assets/js/tokenContext.js') }}"></script>
+  <script src="{{ asset('public/assets/js/login.js') }}"></script>
+  <script src="{{ asset('public/assets/js/tokenContext.js') }}"></script>
 </body>
 </html>
