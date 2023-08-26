@@ -11,11 +11,11 @@
 
   <div class="container">
     <div class="left-section">
-      <img src="assets/img/auth/logo.jpg" alt="Imagen Izquierda">
+      <img src="{{ asset('assets/img/auth/logo.jpg') }}" alt="Imagen Izquierda">
     </div>
     <div class="right-section">
       <div class="rectangle">
-        <img src="{{ asset('assets/img/auth/usuario.png') }}" alt="Imagen de Usuario" class="user-image">
+        <img src="{{ asset('public/assets/img/auth/usuario.png') }}" alt="Imagen de Usuario" class="user-image">
         <h1>{{ Auth::user() }}</h1>
         <form id="login-form" method="POST" action="/ingresar">
           @csrf
