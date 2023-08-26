@@ -26,7 +26,7 @@
   <link href="{{asset('assets/vendor/swiper/swiper-bundle.min.css') }}" rel="stylesheet">
 
   <!-- Template Main CSS File -->
-  <link href="{{asset('assets/css/style.css') }}" rel="stylesheet">
+  <link href="assets/css/style.css" rel="stylesheet">
 
   <!-- =======================================================
   * Template Name: Arsha
@@ -185,7 +185,7 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
-  <script src="assets/js/team.js'"></script>
+  <script src="{{ asset('assets/js/team.js') }}"></script>
 
 
 </body>
