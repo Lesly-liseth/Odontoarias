@@ -3,9 +3,9 @@
 <head>
   <title>Página de Inicio</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
-  <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/auth.css') }}">
-  <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/manners.css') }}">
-  <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/eye.css') }}">
+  <link rel="stylesheet" type="text/css" href="assets/css/auth.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/manners.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/eye.css">
 </head>
 <body>
 
