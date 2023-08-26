@@ -2,6 +2,10 @@
 <html>
 <head>
   <title>Página de Inicio</title>
+  <meta http-equiv="Expires" content="0">
+  <meta http-equiv="Last-Modified" content="0">
+  <meta http-equiv="Cache-Control" content="no-cache, mustrevalidate">
+  <meta http-equiv="Pragma" content="no-cache">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
   <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/auth.css') }}">
   <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/manners.css') }}">
