@@ -48,7 +48,7 @@
   <!-- Modal de advertencia -->
   @include('components.modalWarning')
 
-  <script src="{{ asset('assets/js/login.js') }}"></script>
-  <script src="{{ asset('assets/js/tokenContext.js') }}"></script>
+  <script src="assets/js/login.js"></script>
+  <script src="assets/js/tokenContext.js"></script>
 </body>
 </html>
