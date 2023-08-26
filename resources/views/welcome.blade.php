@@ -185,7 +185,7 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
-  <script src="assets/assets/js/team.js"></script>
+  <script src="assets/js/team.js"></script>
 
 
 </body>
