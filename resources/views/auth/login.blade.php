@@ -11,7 +11,7 @@
 
   <div class="container">
     <div class="left-section">
-      <img src="{{ asset('assets/img/auth/logo.jpg') }}" alt="Imagen Izquierda">
+      <img src="assets/img/auth/logo.jpg" alt="Imagen Izquierda">
     </div>
     <div class="right-section">
       <div class="rectangle">
