@@ -31,10 +31,6 @@ Route::get('/registro', function () {
     return view('auth.registro');
 })->name('registro');
 
-Route::post('/registro', function () {
-    return view('auth.registro');
-})->name('registro');
-
 Route::get('/recovery', function () {
     return view('auth.recovery');
 })->name('recovery');
