@@ -37,6 +37,6 @@ php artisan serve
 ```
 
 ## 📝 Autores
-- Frontend @Lesly Herrera Repositorio
-- Backend [Jhon Torres](https://github.com/jhon-torres) [Backend](https://github.com/jhon-torres/EndPoints_CO.git)
-- App Móvil
+- Frontend [**Lesly Herrera**](https://github.com/Lesly-liseth) [Frontend](https://github.com/Lesly-liseth/Odontoarias.git)
+- Backend [**Jhon Torres**](https://github.com/jhon-torres) [Backend](https://github.com/jhon-torres/EndPoints_CO.git)
+- App Móvil [**Mayra Ñaupari**](https://github.com/mayP2201) [App Móvil](https://github.com/mayP2201/ConsultorioOdont.git)
