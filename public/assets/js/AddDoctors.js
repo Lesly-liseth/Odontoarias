@@ -481,11 +481,11 @@ async function handleRegisterDoctor(e) {
     return phoneRegex.test(phone);
     }
 
-    // function validatePassword(password) {
-    // // Expresión regular para validar la contraseña
-    // const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
-    // return passwordRegex.test(password);
-    // }
+    function validatePassword(password) {
+    // Expresión regular para validar la contraseña
+    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+    return passwordRegex.test(password);
+    }
 
 // Función para abrir el modal de registro
 function openModal() {
