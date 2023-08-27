@@ -308,7 +308,7 @@ body {
   @media (max-width: 480px) {
       .container {
         flex-direction: column;
-        padding: 20px;
+        padding: 5px;
       }
 
       .left-section,
@@ -320,7 +320,7 @@ body {
       .rectangle {
         width: 100%;
         height: auto;
-        padding: 20px;
+        padding: 5px;
       }
 
       .user-image {
@@ -332,11 +332,11 @@ body {
     @media (max-width: 480px) {
       .registration-rectangle {
         width: 90%;
-        margin: 10px;
+        margin: 5px;
       }
 
       .rectangle-Rc {
         width: 100%;
-        padding: 20px;
+        padding: 5px;
       }
     }
