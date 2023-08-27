@@ -8,3 +8,7 @@ https://odontoarias-production.up.railway.app/
 
 ## 🔗📑 Enlace para el Manual de usuario
 https://www.youtube.com/watch?v=E3e7qoUhCX0
+
+## 💻📥 Manual de instalacion
+
+[Desacragar ZIP](https://github.com/Lesly-liseth/Odontoarias/archive/refs/heads/master.zip)
