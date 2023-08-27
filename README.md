@@ -10,5 +10,10 @@ https://odontoarias-production.up.railway.app/
 https://www.youtube.com/watch?v=E3e7qoUhCX0
 
 ## 💻📥 Manual de instalacion
+Para instalar el proyecto del componente frontend, se deben realizar los siguientes pasos:
 
-[Desacragar ZIP](https://github.com/Lesly-liseth/Odontoarias/archive/refs/heads/master.zip)
+Descargar el comprimido ZIP
+[Desacargar ZIP](https://github.com/Lesly-liseth/Odontoarias/archive/refs/heads/master.zip)
+
+Instalar las dependencias con el siguiente comando
+composer install
