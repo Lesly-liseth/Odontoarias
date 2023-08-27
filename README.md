@@ -37,6 +37,6 @@ php artisan serve
 ```
 
 ## 📝 Autores
-- Backend @Jhon Torres
 - Frontend @Lesly Herrera Repositorio
+- Backend [Jhon Torres] (https://github.com/jhon-torres) [Backend] (https://github.com/jhon-torres/EndPoints_CO.git)
 - App Móvil
