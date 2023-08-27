@@ -22,5 +22,10 @@ composer install
 
 Copiar el contenido del archivo ".env.example" en un archivo nuevo llamado ".env".
 ```bash
- cp .env.example .env 
+cp .env.example .env 
+```
+
+Generar una clave única de aplicación para el archivo de configuración
+```bash
+php artisan key:generate 
 ```
