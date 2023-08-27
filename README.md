@@ -16,9 +16,6 @@ Descargar el comprimido ZIP
 [Desacargar ZIP](https://github.com/Lesly-liseth/Odontoarias/archive/refs/heads/master.zip)
 
 Instalar las dependencias con el siguiente comando:
-<details>
-<summary>Ejecutar `composer install`</summary>
-
 ```bash
 composer install
-</details>
+
