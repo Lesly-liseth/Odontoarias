@@ -18,4 +18,7 @@ Descargar el comprimido ZIP
 Instalar las dependencias con el siguiente comando:
 <details>
 <summary>Ejecutar `composer install`</summary>
+
+```bash
+composer install
 </details>
