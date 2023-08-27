@@ -304,39 +304,43 @@ body {
 
   /* Fin de la seccion nueva contraseña */
 
-  /* Media queries para dispositivos móviles y tablets */
-  @media (max-width: 480px) {
-      .container {
-        flex-direction: column;
-        padding: 5px;
-      }
-
-      .left-section,
-      .right-section {
-        flex: none;
-        width: 100%;
-      }
-
-      .rectangle {
-        width: 100%;
-        height: auto;
-        padding: 5px;
-      }
-
-      .user-image {
-        width: 150px;
-        height: 150px;
-      }
+/* Media queries para dispositivos móviles y tablets */
+@media (max-width: 480px) {
+    .container {
+      flex-direction: column;
+      padding: 5px;
     }
 
-    @media (max-width: 480px) {
-      .registration-rectangle {
-        width: 90%;
-        margin: 5px;
-      }
-
-      .rectangle-Rc {
-        width: 100%;
-        padding: 5px;
-      }
+    .left-section,
+    .right-section {
+      flex: none;
+      width: 100%;
     }
+
+    .rectangle {
+      width: 100%;
+      height: auto;
+      padding: 5px;
+    }
+
+    .user-image {
+      width: 150px;
+      height: 150px;
+    }
+
+    .registration-rectangle {
+      width: 90%;
+      height: auto; /* Ajusta la altura según el contenido */
+      margin: auto; /* Esto centra horizontal y verticalmente */
+      padding: 10px; /* Ajusta el padding para que no sea demasiado pequeño */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .rectangle-Rc {
+      width: 100%;
+      padding: 5px;
+    }
+  }
