@@ -3,9 +3,9 @@
 <head>
   <title>Registro de Usuario</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
-  <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/auth.css') }}">
-  <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/eye.css') }}">
-  <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/manners.css') }}">
+  <link rel="stylesheet" type="text/css" href="assets/css/auth.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/eye.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/manners.css">
   <meta name="csrf-token" content="<?php echo csrf_token();?>">
 </head>
 <body>
@@ -84,7 +84,7 @@
   <!-- Modal de advertencia -->
   @include('components.modalWarning')
 
-  <script src="{{ asset('assets/js/registro.js') }}"></script>
-  <script src="{{ asset('assets/js/eye.js') }}"></script>
+  <script src="assets/js/registro.js"></script>
+  <script src="assets/js/eye.js"></script>
 </body>
 </html>
