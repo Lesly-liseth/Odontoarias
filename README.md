@@ -18,4 +18,9 @@ Descargar el comprimido ZIP
 Instalar las dependencias con el siguiente comando:
 ```bash
 composer install
+```
 
+Copiar el contenido del archivo ".env.example" en un archivo nuevo llamado ".env".
+```bash
+ cp .env.example .env 
+```
