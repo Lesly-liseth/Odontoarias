@@ -30,8 +30,13 @@ Generar una clave única de aplicación para el archivo de configuración
 php artisan key:generate 
 ```
 
-## 🖥️ Correr el proyecto
+## 🖥️ Iniciar el proyecto
 Para que el presente proyecto se inicio se debe ejecutar el siguiente comando:
 ```bash
 php artisan serve 
 ```
+
+## 📝 Autores
+- Backend @Jhon Torres
+- Frontend @Lesly Herrera Repositorio
+- App Móvil
