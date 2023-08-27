@@ -15,5 +15,5 @@ Para instalar el proyecto del componente frontend, se deben realizar los siguien
 Descargar el comprimido ZIP
 [Desacargar ZIP](https://github.com/Lesly-liseth/Odontoarias/archive/refs/heads/master.zip)
 
-Instalar las dependencias con el siguiente comando
-composer install
+Instalar las dependencias con el siguiente comando:
+`composer install`
