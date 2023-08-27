@@ -28,7 +28,7 @@ Route::post('/ingresar', function () {
 })->name('login');
 
 Route::get('/registro', function () {
-    return view('auth.registro');
+    return view('auth.Registro');
 })->name('registro');
 
 Route::get('/recovery', function () {
