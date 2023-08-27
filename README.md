@@ -40,3 +40,6 @@ php artisan serve
 - Frontend [**Lesly Herrera**](https://github.com/Lesly-liseth) [Frontend](https://github.com/Lesly-liseth/Odontoarias.git)
 - Backend [**Jhon Torres**](https://github.com/jhon-torres) [Backend](https://github.com/jhon-torres/EndPoints_CO.git)
 - App Móvil [**Mayra Ñaupari**](https://github.com/mayP2201) [App Móvil](https://github.com/mayP2201/ConsultorioOdont.git)
+
+## 🖥 Lenguajes utilizados
+![image](https://github.com/Lesly-liseth/Odontoarias/assets/105396883/81cb3521-8573-4133-a7c6-11927f437095)
