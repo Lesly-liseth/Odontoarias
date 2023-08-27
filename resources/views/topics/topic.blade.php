@@ -9,16 +9,16 @@
 
         <title>Dashboard</title>
 
-        <link href="{{asset('assets/css/stylesAdm.css')}}" rel="stylesheet" />
+        <link href="assets/css/stylesAdm.css" rel="stylesheet" />
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
-        <link href="{{asset('assets/css/main.css')}}" rel="stylesheet" />
-        <script src="{{asset('assets/js/main-min.js')}}"></script>
+        <link href="assets/css/main.css" rel="stylesheet" />
+        <script src="assets/js/main-min.js"></script>
         <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
         <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.4/index.global.min.js'></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.3.4/axios.min.js" integrity="sha512-LUKzDoJKOLqnxGWWIBM4lzRBlxcva2ZTztO8bTcWPmDSpkErWx0bSP4pdsjNH8kiHAUPaT06UXcb+vOEZH+HpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-        <script src="{{asset('assets/js/logout.js')}}"></script>
+        <script src="assets/js/logout.js"></script>
 
-        <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/manners.css') }}">
+        <link rel="stylesheet" type="text/css" href="assets/css/manners.css">
     </head>
     <body class="sb-nav-fixed">
         <nav class="sb-topnav navbar navbar-expand navbar-dark" style="background-color:  #000000;">
@@ -90,7 +90,7 @@
     @include('components.modalWarning')
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-        <script src="{{ asset('assets/js/tokenContext.js') }}"></script>
-        <script src="{{asset('assets/js/scriptsPanel.js')}}"></script>
+        <script src="assets/js/tokenContext.js"></script>
+        <script src="assets/js/scriptsPanel.js"></script>
     </body>
 </html>

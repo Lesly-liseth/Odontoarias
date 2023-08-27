@@ -8,8 +8,8 @@
   <title>Calendario</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" />
-  <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/load.css') }}">
-  <link rel="stylesheet" href="{{ asset('assets/css/calendar.css') }}">
+  <link rel="stylesheet" type="text/css" href="assets/css/load.css">
+  <link rel="stylesheet" href="assets/css/calendar.css">
   {{-- <link rel="stylesheet" href="{{ asset('assets/css/AddDoctors.css') }}"> --}}
 </head>
   <!-- Lista de medicos -->
@@ -109,8 +109,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js"></script>
-  <script src="{{ asset('assets/js/calendar.js') }}"></script>
-  <script src="{{ asset('assets/js/DoctorsList.js') }}"></script>
+  <script src="assets/js/calendar.js"></script>
+  <script src="assets/js/DoctorsList.js"></script>
 </body>
 </html>
 @endsection

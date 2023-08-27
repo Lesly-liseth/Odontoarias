@@ -5,10 +5,10 @@
 <html>
 <head>
   <title>Mi Perfil</title>
-  <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/profile.css') }}">
-  <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/load.css') }}">
-  <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/eye.css') }}">
-  <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/manners.css') }}">
+  <link rel="stylesheet" type="text/css" href="assets/css/profile.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/load.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/eye.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/manners.css">
 </head>
 <body-profile>
 <div class="overlay" id="overlay"></div>
@@ -21,7 +21,7 @@
 
       <form id="profile-form">
         <div class="profile-picture">
-            <img src="{{ asset('assets/img/auth/usuario.png') }}" alt="Foto de Perfil" id="profile-image">
+            <img src="assets/img/auth/usuario.png" alt="Foto de Perfil" id="profile-image">
             <input type="file" accept="image/*" id="profile-upload">
             <br><br>
             <button id="subir-imagen-button" class="subir-imagen-button" >Subir imagen</button>
@@ -117,10 +117,10 @@
   @include('components.modalWarning')
 
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-  <script src="{{ asset('assets/js/profile.js') }}"></script>
-  <script src="{{ asset('assets/js/update-password.js') }}"></script>
-  <script src="{{ asset('assets/js/eye.js') }}"></script>
-  <script src="{{ asset('assets/js/tokenContext.js') }}"></script>
+  <script src="assets/js/profile.js"></script>
+  <script src="assets/js/update-password.js"></script>
+  <script src="assets/js/eye.js"></script>
+  <script src="assets/js/tokenContext.js"></script>
 </body-profile>
 </html>
 @endsection

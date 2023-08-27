@@ -10,8 +10,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Odontograma</title>
-  <link rel="stylesheet" href="{{ asset('assets/css/HistoriasClinicas.css') }}">
-  <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/load.css') }}">
+  <link rel="stylesheet" href="assets/css/HistoriasClinicas.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/load.css">
   <script src="https://kit.fontawesome.com/f8445650d3.js" crossorigin="anonymous"></script>
 
 </head>
@@ -217,7 +217,7 @@
   </div>
 
   <!-- <script src="HistoriasClinicas.js"></script> -->
-  <script src="{{ asset('assets/js/HistoriasClinicas.js') }}"></script>
+  <script src="assets/js/HistoriasClinicas.js"></script>
 </body>
 
 </html>

@@ -1,7 +1,7 @@
 @extends('topics.topic')
 @section('contenido')
-<link rel="stylesheet" href="{{ asset('assets/css/listPatients.css') }}">
-<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/load.css') }}">
+<link rel="stylesheet" href="assets/css/listPatients.css">
+<link rel="stylesheet" type="text/css" href="assets/css/load.css">
 
 <body>
     <div class="overlay" id="overlay"></div>
@@ -35,6 +35,6 @@
   </table>
 </div>
 
-<script src="{{ asset('assets/js/listPatients.js') }}"></script>
+<script src="assets/js/listPatients.js"></script>
 </body>
 @endsection
