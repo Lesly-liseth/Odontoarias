@@ -56,7 +56,7 @@
           <span class="error-message" id="address-error" style="display: none;"></span>
         </div>
         <div class="form-group">
-          <label for="description">Descripción:</label>
+          <label id="description1" for="description">Descripción:</label>
           <div class="control">
             <textarea class="textarea-description" id="description" placeholder="Ingrese su descripción"></textarea>
           </div>

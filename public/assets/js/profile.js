@@ -1,3 +1,5 @@
+const perfil_usuario = sessionStorage.getItem('idRol');
+
 // Event Listeners
 const profileForm = document.getElementById('profile-form');
 profileForm.addEventListener('submit', updateProfile);
@@ -226,8 +228,21 @@ function populateProfileForm(profileData) {
   }
 // Event Listener para cargar los datos del perfil cuando la página se carga
 window.addEventListener('load', () => {
-  getProfile();
-});
+    getProfile();
+    const profilePicture = document.querySelector('.profile-picture');
+    const descriptionField = document.getElementById('description');
+    const descriptionField1 = document.getElementById('description1');
+
+    if (perfil_usuario == 2) {
+      profilePicture.style.display = 'block';
+      descriptionField.style.display = 'block';
+      descriptionField1.style.display = 'block';
+    } else {
+      profilePicture.style.display = 'none';
+      descriptionField.style.display = 'none';
+      descriptionField1.style.display = 'none';
+    }
+  });
 
 // Funciones de validación
 function validateNames(names) {

@@ -344,3 +344,15 @@ body {
       padding: 5px;
     }
   }
+
+    /* @media (max-width: 480px) {
+      .registration-rectangle {
+        width: 90%;
+        margin: 10px;
+      }
+
+      .rectangle-Rc {
+        width: 100%;
+        padding: 20px;
+      }
+    } */
