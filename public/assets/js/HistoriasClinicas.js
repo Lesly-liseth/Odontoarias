@@ -14,6 +14,7 @@ const openModalButton = document.getElementById('openRegisterModal');
 const serviceForm = document.getElementById('register-form');
 const perfil_usuario = sessionStorage.getItem('idRol');
 var doctors = [];
+
 // const overlay1 = document.getElementById('overlay');
 
 const animacionCargando = document.getElementById('cargando');
@@ -57,15 +58,17 @@ function hideWarningModal() {
 
 // Función para abrir el modal y guardar el cuadrado seleccionado
 function abrirModal(event) {
+    // Restablecer los campos del modal
+    diagnosisInput.value = '';
+    servicioSelect.value = '';
+
     // console.log("Abriendo el modal...");
     const cuadrado = event.target;
     const cuadradoNumber = cuadrado.dataset.number;
     cuadradoSeleccionado = cuadrado;
     // console.log("Cuadrado seleccionado:", cuadradoNumber);
     modal.classList.add('is-active');
-    // overlay1.style.display = 'block'; // Mostrar el fondo oscuro
-    // modal.style.zIndex = '9999'; // Asegurar que el modal esté por encima del fondo
-    // Guardar los estilos de fondo de los cuadrados
+
     cuadrados.forEach(cuadrado => {
       const cuadradoNumber = cuadrado.dataset.number;
       estilosCuadrados[cuadradoNumber] = cuadrado.style.backgroundColor;
@@ -111,12 +114,6 @@ async function aplicarColor(event) {
     event.preventDefault(); // Prevenir que la página se recargue
 
     cuadradoSeleccionado.style.backgroundColor = colorSeleccionado;
-
-    // Obtener valores del formulario
-    const pieza = piezaInput.value;
-    const servicioSelect = document.getElementById('servicioSelect');
-    const servicio = servicioSelect.value;
-    const diagnosis = diagnosisInput.value;
 
     // Cerrar el modal y agregar la fila solo si el modal se cierra correctamente
     if (cerrarModal()) {
@@ -530,8 +527,3 @@ document.addEventListener('DOMContentLoaded', async () => {
         hideLoader();
       }
     }
-
-//   async function guardarServicio(){
-
-//     alert('guardar');
-//   }
