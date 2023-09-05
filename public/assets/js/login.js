@@ -84,38 +84,38 @@ document.getElementById('cancel-btn').addEventListener('click', function () {
           console.log('Inicio de sesión exitoso');
           localStorage.setItem('token', token);
           sessionStorage.setItem('token', token);
-          console.warn(sessionStorage);
+          //console.warn(sessionStorage);
         //   console.log("token", token );
 
-//obtner perfil usuario
+        //obtner perfil usuario
 
-try {
-  //verificacion de premisos de usuario
-  const permisosRol =  await fetch(`https://endpointsco-production.up.railway.app/api/get-user`, {
-  method: 'GET',
-  headers: {
-    'Content-Type': 'application/json',
-    'Authorization': `Bearer ${token}`,
-    'Accept': 'application/json',
-  },
-});
+      try {
+        //verificacion de premisos de usuario
+        const permisosRol =  await fetch(`https://endpointsco-production.up.railway.app/api/get-user`, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`,
+            'Accept': 'application/json',
+        },
+        });
 
-if (permisosRol.ok) {
-  const responseData = await permisosRol.json();
-  const valorIdRol = responseData.rol_id
+        if (permisosRol.ok) {
+        const responseData = await permisosRol.json();
+        const valorIdRol = responseData.rol_id
 
-  localStorage.setItem('idRol', valorIdRol);
-  sessionStorage.setItem('idRol', valorIdRol);
+        localStorage.setItem('idRol', valorIdRol);
+        sessionStorage.setItem('idRol', valorIdRol);
 
-  localStorage.setItem('identity_card_user', responseData.identity_card_user);
-  sessionStorage.setItem('identity_card_user', responseData.identity_card_user);
-} else {
-    showWarningModal("Error al obtener el rol");
-}
-} catch (error) {
-    showWarningModal("Error en la solicitud");
-console.error('Error en la solicitud:', error);
-}
+        localStorage.setItem('identity_card_user', responseData.identity_card_user);
+        sessionStorage.setItem('identity_card_user', responseData.identity_card_user);
+        } else {
+            showWarningModal("Error al obtener el rol");
+        }
+        } catch (error) {
+            showWarningModal("Error en la solicitud");
+        console.error('Error en la solicitud:', error);
+        }
 
           // Mostrar el modal de advertencia con el mensaje de éxito
           warningMessage.textContent = 'Inicio de sesión exitoso.';

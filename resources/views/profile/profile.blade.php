@@ -116,7 +116,6 @@
   <!-- Modal de advertencia -->
   @include('components.modalWarning')
 
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
   <script src="assets/js/profile.js"></script>
   <script src="assets/js/update-password.js"></script>
   <script src="assets/js/eye.js"></script>
