@@ -82,10 +82,11 @@ function abrirModal(event) {
 function cerrarModalSinDespintar() {
     modal.classList.remove('is-active');
     cuadradoSeleccionado = null; // Corrección: Debe ser "null" en lugar de "nulo"
-
+    //Realiza un bucle a través de todos los elementos en la lista cuadrados
     cuadrados.forEach(cuadrado => {
+      //se obtiene el número de cuadrado
       const cuadradoNumber = cuadrado.dataset.number;
-
+        //verifica si contiene un valor. 
       if (estilosCuadrados[cuadradoNumber]) {
         cuadrado.style.backgroundColor = estilosCuadrados[cuadradoNumber];
         // Restaurar el color original del cuadro
@@ -131,8 +132,12 @@ modalItems.forEach(item => {
   const modalLabel = item.querySelector('.modal-label');
 
   item.addEventListener('click', function() {
+    //Se obtiene el color de fondo y se almacena en la variable
     colorSeleccionado = modalColor.style.backgroundColor;
+    /*Se elimina la clase CSS 'selected' de todos los elementos
+    en modalItems utilizando un bucle forEach y item.classList.remove('selected'). */
     modalItems.forEach(item => item.classList.remove('selected'));
+    //Se agrega la clase CSS Se agrega la clase CSS
     item.classList.add('selected');
   });
 });
@@ -284,8 +289,12 @@ async function guardarAntecedentesEnAPI() {
 
 // Comprobar el estado guardado en el almacenamiento local al cargar la página
 document.addEventListener('DOMContentLoaded', () => {
+    //obtener el valor asociado con la clave en el almacenamiento local del navegador
     const antecedentesGuardados = localStorage.getItem('antecedentesGuardados');
+    //comprobar si se ha guardado un estado específico en el almacenamiento local.
     if (antecedentesGuardados === 'true') {
+        //si los antecedentes ya están guardados, el usuario no puede interactuar
+        //con el botón ni con el input de fondo.
         guardarAntecedentesButton.disabled = true;
         backgroundInput.disabled = true;
     }
@@ -293,15 +302,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function llenarDatosFormulario(data){
     console.log(data.DetailsRecord);
+    //recorrer los elementos en el arreglo DetailsRecord
     for(i=0;i<data.DetailsRecord.length;i++){
         obj=data.DetailsRecord[i];
         //console.log(obj.id);
+        //convertir la cadena JSON en un objeto JavaScript.
         vodo=JSON.parse(obj.odontogram);
+        /*construye un selector vid que se utiliza para seleccionar
+        un elemento HTML con un ID basado en la propiedad pieza del objeto vodo */
         vid='#'+vodo.pieza;
 
         console.log(vodo);
         console.log(vodo.color);
-
+            /* Se utiliza jQuery ($(vid)) para seleccionar el elemento HTML
+            correspondiente a la pieza dental y se cambia su fondo (background-color)
+            al valor del color obtenido del objeto vodo.*/
             $(vid).css('background-color', vodo.color);
 
     }
@@ -311,10 +326,12 @@ function llenarDatosFormulario(data){
   document.getElementById('background').value=data.background;
 }
 
+//mostrar detalles de la historia clínica de los pacientes
 function detalleHistoria(data) {
     const patientsTableBody = document.getElementById('citas');
+// cadena vacia (borrar cualquier contenido previo en la tabla antes de agregar nuevos datos.)
     patientsTableBody.innerHTML = '';
-
+    //inicia un bucle forEach para recorrer cada objeto patient en el arreglo data
     data.forEach((patient) => {
       const { created_at, reason, id, id_record } = patient; // Obtener solo los campos necesarios
       const row = document.createElement('tr');
@@ -348,6 +365,7 @@ function showServices() {
     const servicioSelect = document.getElementById("servicioSelect");
     servicioSelect.innerHTML = '<option value="Servicio">Servicio</option>';
 
+    //Se inicia un bucle que recorre cada elemento en la matriz
     for (const doctor of doctors) {
       const opcionElement = document.createElement("option");
       opcionElement.text = doctor.description;
@@ -381,10 +399,12 @@ async function enviarDatosAPI() {
     }
 
     // Obtener los datos del odontograma
+    //Se llama a la función obtenerDatosOdontograma(servicio) para obtener datos relacionados con el odontograma
     const odontogramaData = obtenerDatosOdontograma(servicio);
     const dataToSend = {
+      //Se crea un objeto llamado dataToSend
       idCard: idCard,
-      odontogram: JSON.stringify(odontogramaData),
+      odontogram: JSON.stringify(odontogramaData), //los datos del odontograma convertidos en una cadena JSON
       reason: diagnostico,
       servicio: servicio
     };
@@ -430,11 +450,13 @@ async function enviarDatosAPI() {
 
 // Función para obtener los datos del odontograma
 function obtenerDatosOdontograma(servicio) {
+  //obtener valores del formulario
   const pieza = document.getElementById("pieza").value;
   const color = cuadradoSeleccionado.style.backgroundColor;
   const diagnostico = document.getElementById("dgn").value;
   const fecha = new Date().toISOString();
 
+  //se crea objeto que contiene los campos y el valor
   const odontogramaData = {
     color: color,
     pieza: pieza,
