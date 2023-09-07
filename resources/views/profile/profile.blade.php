@@ -24,7 +24,7 @@
             <img src="assets/img/auth/usuario.png" alt="Foto de Perfil" id="profile-image">
             <input type="file" accept="image/*" id="profile-upload">
             <br><br>
-            <button id="subir-imagen-button" class="subir-imagen-button" >Subir imagen</button>
+            <button id="subir-imagen-button" class="subir-imagen-button">Subir imagen</button>
         </div>
         <div class="form-group">
           <label for="names">Nombre:</label>
@@ -56,7 +56,7 @@
           <span class="error-message" id="address-error" style="display: none;"></span>
         </div>
         <div class="form-group">
-          <label id="description1" for="description">Descripción:</label>
+          <label for="description1" id="description1">Descripción:</label>
           <div class="control">
             <textarea class="textarea-description" id="description" placeholder="Ingrese su descripción"></textarea>
           </div>
@@ -73,45 +73,44 @@
         <div class="form-group">
           <label for="password_current">Contraseña actual:</label>
           <div class="input-group mb-3">
-          <input type="password" id="password_current" placeholder="Ingrese su contraseña actual">
-          <div class="input-group-append">
-            <button type="button" class="eye-btn" id="toggle-password-current">
-              <i class="far fa-eye" id="eye-icon"></i>
-            </button>
+            <input type="password" id="password_current" placeholder="Ingrese su contraseña actual">
+            <div class="input-group-append">
+              <button type="button" class="eye-btn" id="toggle-password-current">
+                <i class="far fa-eye" id="eye-icon"></i>
+              </button>
+            </div>
           </div>
-        </div>
-          <span class="error-message" id="password_current-error"></span>
+          <span class="error-message" id="password_current-error" style="display: none;"></span>
         </div>
 
         <div class="form-group">
           <label for="password">Contraseña nueva:</label>
           <div class="input-group mb-3">
-          <input type="password" id="password" placeholder="Ingrese su contraseña nueva">
-          <div class="input-group-append">
-            <button type="button" class="eye-btn" id="toggle-password">
-              <i class="far fa-eye" id="eye-icon"></i>
-            </button>
+            <input type="password" id="password" placeholder="Ingrese su contraseña nueva">
+            <div class="input-group-append">
+              <button type="button" class="eye-btn" id="toggle-password">
+                <i class="far fa-eye" id="eye-icon"></i>
+              </button>
+            </div>
           </div>
-        </div>
-          <span class="error-message" id="password-error"></span>
+          <span class="error-message" id="password-error" style="display: none;"></span>
         </div>
         <div class="form-group">
-          <label for="password_confirm">Confirmar contraseña:</label>
+          <label for="confirm_password">Confirmar contraseña:</label>
           <div class="input-group mb-3">
-          <input type="password" id="confirm_password" placeholder="Confirme su contraseña">
-          <div class="input-group-append">
-            <button type="button" class="eye-btn" id="toggle-confirm-password">
-              <i class="far fa-eye" id="confirm-eye-icon"></i>
-            </button>
+            <input type="password" id="confirm_password" placeholder="Confirme su contraseña">
+            <div class="input-group-append">
+              <button type="button" class="eye-btn" id="toggle-confirm-password">
+                <i class="far fa-eye" id="confirm-eye-icon"></i>
+              </button>
+            </div>
           </div>
-        </div>
-          <span class="error-message" id="password_confirm-error"></span>
+          <span class="error-message" id="confirm_password-error" style="display: none;"></span>
         </div>
 
         <button id="guardar-contraseña">Guardar</button>
       </form>
     </div>
-  </div>
 
   <!-- Modal de advertencia -->
   @include('components.modalWarning')
