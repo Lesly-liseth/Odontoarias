@@ -15,6 +15,9 @@ use App\Http\Controllers\CalendarApiController;
 |
 */
 
+//Ruta protegida por el middleware de autenticacion "auth:sanctun" rutas accesibles solo para usuarios logeados
+/*no verifica el token Csrf en las solicitudes API, el middleware es utilizado
+para autenticar solicitudes api con tokens de autenticacion*/
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });

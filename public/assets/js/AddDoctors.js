@@ -61,6 +61,7 @@ function showLoader() {
     loader.style.display = 'none'; // Mostrar el loader
   }
 
+  //verificacion de permisos del usuario
   document.addEventListener('DOMContentLoaded', async () => {
     try {
       // Verificación de permisos de usuario
@@ -70,6 +71,7 @@ function showLoader() {
         return; // Detener el proceso si no hay token
       }
 
+      //api para obtener los permisos de usuario
       const permisosRol = await fetch(`https://endpointsco-production.up.railway.app/api/get-user`, {
         method: 'GET',
         headers: {
@@ -101,6 +103,7 @@ function showLoader() {
     }
   });
 
+//Carga y muestra una lista de odontologos
 async function cargarListaDoctores(token, id_rol) {
     const id_rol_odontologo = 2;
 
@@ -140,7 +143,7 @@ async function cargarListaDoctores(token, id_rol) {
 function showDoctors() {
     let html = '';
     let i = 1;
-
+// Verificamos si la respuesta es un array y tiene al menos un odontologo
     if (Array.isArray(doctors) && doctors.length > 0) {
       doctors.forEach((doctor) => {
         const { identity_card_user, names, surnames, email, phone, address, profesional_description, user_state } = doctor;
@@ -173,11 +176,13 @@ function showDoctors() {
     const listaUsuarios = document.getElementById('listaUsuarios');
     listaUsuarios.innerHTML = html;
 
+    //agregar evento al boton de estado
     const statusButtons = listaUsuarios.getElementsByClassName('btn-status');
     Array.from(statusButtons).forEach((statusButton) => {
       statusButton.addEventListener('click', handleStatusDoctor);
     });
 
+    //agregar evento al boton de editar
     const editButtons = listaUsuarios.getElementsByClassName('btn-edit');
     Array.from(editButtons).forEach((editButton) => {
       editButton.addEventListener('click', handleEditDoctor);
@@ -188,15 +193,16 @@ function showDoctors() {
 // Función para buscar odontólogos por numero de cedula
 function searchDoctors(e) {
   e.preventDefault();
-  console.warn(document.getElementById('formulario').value);
+  console.warn(document.getElementById('formulario').value); //verificar que ingresa en el campo de busqueda
 
-  const searchTerm = (document.getElementById('formulario').value);
+  const searchTerm = (document.getElementById('formulario').value); //obtener el valo ingresado y almacena en una variable
+  //logitud menor o = a 19
   if(searchTerm.length <= 10){
     console.log(doctors);
     const filteredDoctors = doctors.filter((doctor) => {
       return doctor.identity_card_user.toLowerCase().slice(0,10).search(searchTerm) != -1;
     });
-
+    //muestra usuario
     if (filteredDoctors.length === 0) {
       doctorList.innerHTML = `<tr><td colspan="9">No existe ningún Odontólogo con ese número de identificación.</td></tr>`;
     } else {
@@ -209,8 +215,11 @@ function searchDoctors(e) {
 
 // Función para mostrar los odontologos filtrados
 function showFilteredDoctors(filteredDoctors) {
+    //inicializa la variable html como una cadena vacio (construir el contenido html)
     let html = '';
+    //enumerar odontologos
     let i = 1;
+    //filtra a los odontologos
     filteredDoctors.forEach((doctor) => {
       const { identity_card_user, names, surnames, email, phone, address, profesional_description, user_state } = doctor;
       const statusButtonClass = user_state === 1 ? 'btn-status activo' : 'btn-status inactivo';
@@ -363,6 +372,7 @@ async function handleRegisterDoctor(e) {
     }
 
     // Validaciones
+    //verificacion que los campos ingresados sean validos
     if (!validateNames(names)) {
         showError('names', 'Ingrese un nombre válido');
         hideLoader(); // Ocultar el indicador de carga en caso de error
@@ -420,6 +430,7 @@ async function handleRegisterDoctor(e) {
     }
 
     try {
+        const token = localStorage.getItem('token');
         // Asegúrate de que el token tenga el valor correcto antes de hacer la solicitud
         const response = await fetch('https://endpointsco-production.up.railway.app/api/register/dentist', {
             method: 'POST',
@@ -456,6 +467,7 @@ async function handleRegisterDoctor(e) {
         hideLoader();
     }
 }
+//validaciones de campos
     function validateNames(names) {
     const namesRegex = /^[a-zA-ZñÑ\s]{3,}$/;
     return namesRegex.test(names);
@@ -503,10 +515,12 @@ async function handleStatusDoctor() {
     showLoader(); // Mostrar el cargador y la superposición
 
     try {
+        //obtener el id del odontologo desde el atributo data-id convertir en entero y almacenarlo
       doctorIdConfirmation = parseInt(this.dataset.id);
       const doctor = doctors.find((doc) => doc.id === doctorIdConfirmation);
 
       if (doctor) {
+        //verifica el estado actual del odontologo
         const newStatus = doctor.user_state === 1 ? 0 : 1;
         const statusAction = newStatus === 1 ? 'activar' : 'desactivar';
         confirmationMessage.textContent = `¿Está seguro de ${statusAction} al odontólogo?`;
@@ -525,11 +539,14 @@ async function handleStatusDoctor() {
     showLoader();
 
     try {
+        //si no es null se confirma el cambio de estado
       if (doctorIdConfirmation !== null) {
+        //obtener el nuevo estado
         const newStatus = parseInt(confirmYesButton.dataset.status);
         const doctor = doctors.find((doc) => doc.id === doctorIdConfirmation);
 
         if (doctor) {
+            //solicitud par ahabilitar o deshabilitar
           if (newStatus === 1) {
             await serviceEnableDoctor(doctor.identity_card_user);
             doctor.user_state = 1;
@@ -542,6 +559,7 @@ async function handleStatusDoctor() {
           showDoctors();
         }
       }
+      //cerrar modal de confirmation
       doctorIdConfirmation = null;
       closeModal();
     } catch (error) {
@@ -554,6 +572,7 @@ async function handleStatusDoctor() {
 // Función para deshabilitar al odontólogo utilizando la API
 async function serviceDisableDoctor(identityCard) {
     try {
+      const token = localStorage.getItem('token');
       const response = await fetch(`https://endpointsco-production.up.railway.app/api/disable-user/${identityCard}`, {
         method: 'POST',
         headers: {
@@ -576,6 +595,7 @@ async function serviceDisableDoctor(identityCard) {
   // Función para habilitar al odontólogo utilizando la API
   async function serviceEnableDoctor(identityCard) {
     try {
+      const token = localStorage.getItem('token');
       const response = await fetch(`https://endpointsco-production.up.railway.app/api/enable-user/${identityCard}`, {
         method: 'POST',
         headers: {
@@ -638,6 +658,7 @@ function handleEditDoctor() {
   //funcion llama al servicio de actualizacion de doctor
   async function serviceUpdateDoctor(doctor) {
     try {
+      const token = localStorage.getItem('token');
       const response = await fetch(`https://endpointsco-production.up.railway.app/api/update-user/${doctor.identity_card_user}`, {
         method: 'POST',
         headers: {

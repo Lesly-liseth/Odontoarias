@@ -15,6 +15,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+/* definir las rutas web que se utilizan para cargar
+las vistas HTML*/
 Route::get('/', function () {
     return view('welcome');
 });

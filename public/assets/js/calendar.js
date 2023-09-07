@@ -4,9 +4,10 @@
 const closeModalButton = document.getElementById('cerrarModal');
 
 closeModalButton.addEventListener('click', confirmCloseModal); // Change the event listener
-
+//variable citas como arreglo vacio
 let citas = [];
 const token = localStorage.getItem('token');
+//variable sin valor
 let cedulaPaciente;
 
 // Function to show a confirmation message before closing the modal
@@ -15,7 +16,7 @@ function confirmCloseModal() {
 
 }
 
-// Function to close the modal
+// Function cerrar el modal
 function closeModal() {
   $('#availabilityModal').modal('hide');
 }
@@ -44,12 +45,15 @@ document.addEventListener('DOMContentLoaded', function() {
     let selectedEvent = null; // Variable para almacenar el evento seleccionado
 
     //const today = moment().startOf('day'); //tener fecha actual
-    const urlParams = new URLSearchParams(window.location.search);
+    const urlParams = new URLSearchParams(window.location.search); //obtener  los parametro de la url actual
+    //buscar el valor del obj
     cedulaPaciente = urlParams.get('obj');
 //    console.log(cedulaPaciente);
 
+    //obtener fecha y hora actual
     const today = moment();
 
+    //establecer vista predeterminada, intervalos de tiempo, etc
     $('#calendar').fullCalendar({
       defaultView: 'agendaWeek',
       header: {
@@ -70,11 +74,15 @@ document.addEventListener('DOMContentLoaded', function() {
         start: today //establecer la fecha mínima como el día actual
       },
 
+      //se ejcuta cuando se selecciona un rango de fecha y hora
       select: function(start, end) {
+        //obtener la fecha seleccionada en el formato establecido
+        //biblioteca moment.js.
         const selectedDate = moment(start).format('YYYY-MM-DD');
         const selectedTime = moment(start).format('HH:mm');
         updateModalFields(selectedDate, selectedTime,'Nuevo'); // actualizar los campos del modal con la fecha y hora seleccionadas
         $('#availabilityTime').prop('disabled', 'disabled');
+        //mostrar botones dependiendo el rol
         if (perfil_usuario==2){//odontologo
             $('#saveAvailabilityBtn').show();
             $('#ReagendarBtn').hide();
@@ -89,25 +97,26 @@ document.addEventListener('DOMContentLoaded', function() {
         const selectedTime = moment(calEvent.start).format('HH:mm');
         updateModalFields(selectedDate, selectedTime,calEvent.title); // actualizar los campos del modal con la fecha y hora del evento seleccionado
         //console.log(calEvent.title);
+        //visibilidad de los botones
         $('#saveAvailabilityBtn').hide();
         $('#AgendarBtn').hide();
         $('#LiberarBtn').hide();
-
+        //mostrar modal luego de hacer clic en el evento seleccionado
         $('#availabilityTime').prop('disabled', 'disabled');
 
-
+        //verifica si esta disponibel
         if(calEvent.title=='Disponible'){
-          $('#AgendarBtn').show();
-          $('#LiberarBtn').hide();
-          $('#saveAvailabilityBtn').hide();
-          $('#ReagendarBtn').hide();
+          $('#AgendarBtn').show(); //mostrar boton de agendar
+          $('#LiberarBtn').hide(); //oculta el boton liberar
+          $('#saveAvailabilityBtn').hide(); //Oculta el botón 'saveAvailabilityBtn'
+          $('#ReagendarBtn').hide(); //Oculta el botón 'ReagendarBtn
           console.log('entra.........');
           console.log('perfil_usuario');
           if (perfil_usuario==2){//odontologo
-            $('#saveAvailabilityBtn').hide();
+            $('#saveAvailabilityBtn').hide(); //oculta
             $('#LiberarBtn').hide();
             $('#AgendarBtn').hide();
-            $('#ReagendarBtn').show();
+            $('#ReagendarBtn').show(); //muestra
             $('#availabilityTime').prop('disabled', false);
           }else if (perfil_usuario==1){
             $('#modOdontologo').prop('disabled', 'disabled');
@@ -120,8 +129,8 @@ document.addEventListener('DOMContentLoaded', function() {
           }
         }else if(calEvent.title.includes('Agendada')){
           if (perfil_usuario==1){
-            $('#LiberarBtn').hide();
-            $('#ReagendarBtn').show();
+            $('#LiberarBtn').hide(); //oculta
+            $('#ReagendarBtn').show(); //muestra
             $('#modOdontologo').prop('disabled', false);
             if(cedulaPaciente!==null){
               $('#spanPaciente').hide();
@@ -148,6 +157,7 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
 
+    //establecer el contenido html de los botones con los iconos
     $('.fc-prev-button').html('<i class="fas fa-chevron-left"></i>');
     $('.fc-next-button').html('<i class="fas fa-chevron-right"></i>');
 
@@ -158,22 +168,23 @@ document.addEventListener('DOMContentLoaded', function() {
 
     //accion de boton agendar
      $('#AgendarBtn').click(function() {
+        //selectedEvent tiene un valor si se ha seleccionado un evento en el calendario
       if (selectedEvent) {
         // Actualizar el evento existente
         console.log(selectedEvent.id);
-        selectedEvent.title = 'Agendada';
+        selectedEvent.title = 'Agendada'; //titulo
         selectedEvent.classNames = 'agendado-event';
-        selectedEvent.backgroundColor= 'blue';
+        selectedEvent.backgroundColor= 'blue'; //color de fondo
+        //actualiza revento
         $('#calendar').fullCalendar('updateEvent', selectedEvent);
         agendar(selectedEvent.id,'agendar',selectedEvent.title,selectedEvent);
-
+        //agendar nuevo evento
         selectedEvent = null; // Restablecer la variable para permitir la creación de un nuevo evento después de la actualización
       } else {
         showWarningModal("No puede ingresar una nueva");
       }
         $('#availabilityModal').modal('hide');
      });
-
 
 
     //accion de boton liberar
@@ -278,16 +289,18 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 //crea disponibilidad del doctor
     $('#saveAvailabilityBtn').click(async function grabarFechasAdmin(){
-    const selectedDate = $('#availabilityDate').val();
-    const selectedTime = $('#availabilityTime').val();
+    //recopilar los valores de los campos del formulario
+    const selectedDate = $('#availabilityDate').val(); //disponibilidad de fechas
+    const selectedTime = $('#availabilityTime').val(); //disponibilidad de hora
     const selectedAvailability= $('#availabilitySelect').val();
 
     console.log(`datos a guardar ${selectedDate}, ${selectedTime}, ${selectedAvailability}`);
 
-    const fechaok=selectedDate.replaceAll('-','/');
-    const horafin=moment(selectedDate + 'T' + selectedTime).add(1, 'hour').format('HH:00');
+    const fechaok=selectedDate.replaceAll('-','/'); //formato a la fecha
+    const horafin=moment(selectedDate + 'T' + selectedTime).add(1, 'hour').format('HH:00'); //duracion de la disponibilidad
     //.format('YYYY/MM/DD');
     console.log(fechaok);
+    //recipolar los datos para enviar a la api
         const data = {
           date: fechaok,
           start_time: selectedTime,
@@ -330,6 +343,7 @@ document.addEventListener('DOMContentLoaded', function() {
     cargarCitas_usuario(token);
   });
 
+  //obtener las citas
   async function cargarCitas_usuario(token){
     //console.log('crgando citas-.......................');
     url=`https://endpointsco-production.up.railway.app/api/getAppointmentsUser`;
@@ -383,15 +397,15 @@ function showCitas() {
     // Crear evento
     const newEvent = {
       title: titulo,
-      start: date + 'T' + start_time,
-      end: date  + 'T' + end_time,
-      classNames: vclassNames,
-      backgroundColor: vcolor,
+      start: date + 'T' + start_time, //fecha y hora de inicio
+      end: date  + 'T' + end_time, //fin
+      classNames: vclassNames, //estilos aplicados
+      backgroundColor: vcolor, //color de fondp
       borderColor: vcolor,
-      id:id,
+      id:id, //id unico del evento
       extendedProps: {
-        id_patient: id_patient,
-        identity_card_user:identity_card_user
+        id_patient: id_patient, //id del paciente
+        identity_card_user:identity_card_user //cedula
       }
     };
 
@@ -405,11 +419,10 @@ function showCitas() {
 
       });
     } else {
-      // Si no hay pacientes en la respuesta, mostramos un mensaje o hacemos algo adecuado para tu caso
     }
   }
 
-
+//agendar cita
 async function agendar(idCita,evento,idpaciente,event){
 
   idp=idpaciente.replaceAll('Agendado ','');
@@ -443,7 +456,7 @@ async function agendar(idCita,evento,idpaciente,event){
         }
       }
     }
-
+//consumo de apis
     if (perfil_usuario==1){
 //      console.log(data);
 //      console.log(url);
@@ -500,14 +513,14 @@ async function agendar(idCita,evento,idpaciente,event){
     console.error(error);
   }
 }
-
-
+ //reagendar citas medicas
 async function reagendar(citaModificada){
 
   const {identity_card_user,id_patient } = citaModificada.extendedProps;
 
   idp=id_patient;
 
+  //obtener elementos del formulario html (fecha, hora y disponibilidad)
   const selectedDate = $('#availabilityDate').val();
   const selectedTime = $('#availabilityTime').val();
   const selectedAvailability= $('#availabilitySelect').val();
@@ -519,6 +532,7 @@ async function reagendar(citaModificada){
   //.format('YYYY/MM/DD');
 
   console.log(fechaok);
+  //si es el rol 1 se contruye el objeto data que contiene informacion de la cita
   if (perfil_usuario==1){
       data = {
         date: fechaok,
@@ -538,6 +552,7 @@ async function reagendar(citaModificada){
       //1314253678
 console.log(data);
   try {
+    //consumo de api
       url='https://endpointsco-production.up.railway.app/api/updateAppointment/'+citaModificada.id;
           const response =  await fetch(url, {
           method: 'POST',

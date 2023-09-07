@@ -1,6 +1,7 @@
 const doctorList = document.getElementById('listaUsuarios');
 
 const searchButton = document.getElementById('boton');
+//recuperar el valor almacenado en la variable de sesion idRol asignando a la variable
 const perfil_usuario = sessionStorage.getItem('idRol');
 const videntity_card_user = sessionStorage.getItem('identity_card_user');
 
@@ -53,7 +54,6 @@ function searchDoctors(e) {
   }else{
     showWarningModal(`Para la busqueda ingrese solo 10 caracteres`);
   }
-
 }
 
 // Funsión para mostrar los odontologos filtrados
@@ -85,6 +85,7 @@ function showFilteredDoctors(filteredDoctors) {
   }); */
 }
 
+//consulta los odontologos
 // Token
 document.addEventListener('DOMContentLoaded', async () => {
   if(perfil_usuario!=2){
@@ -177,11 +178,12 @@ function showDoctors() {
   function loadDoctors() {
 
     //console.warn(doctors.length);
+    //listas despegablas
     var select = document.createElement("select");
     select.id="listOdontologo";
     var select2 = document.createElement("select");
     select2.id="modOdontologo";
-
+    //seleccionar un doctor
     var item = document.createElement("option");
       item.text = 'Seleccione un doctor';
       item.value= '-';
@@ -195,7 +197,7 @@ function showDoctors() {
 
 
     for (let index = 0; index < doctors.length; index++) {
-
+        //en cada iteracion del bucle crea un nuevo elemento option con el nombre del O.
       item = document.createElement("option");
       item.text = doctors[index].names +' '+doctors[index].surnames;
       item.value= doctors[index].identity_card_user;
@@ -208,13 +210,13 @@ function showDoctors() {
     }
 
 
-
+    //detectar un cambio en la seccion de odontologosy activar la funcion cargar citas
     select.addEventListener('change', ()=>{
       idDoctorSeleccionado=select.value;
       cargarCitas(select.value);
     }
     );
-
+    //asigna el valor seleccionado a la varible idDoctorSeleccionado
     select2.addEventListener('change', ()=>{
       idDoctorSeleccionado=select2.value;
     } );
@@ -242,13 +244,16 @@ function showDoctors() {
         contenedor3.appendChild(span);
     }
   }
-
+//mostras las citas
   async function cargarCitas(identificacion){
+    //limpiar el calendario antes de caragr nuevas citas
     $('#calendar').fullCalendar('removeEvents');
     //const token = localStorage.getItem('token');
+    //obtener citas
     url=`https://endpointsco-production.up.railway.app/api/getAppointmentsByDentist/`+idDoctorSeleccionado;
     if (idDoctorSeleccionado=='-'){
       if (perfil_usuario==1){
+        //obtener citas sin seleccionar odontologo.
         url=`https://endpointsco-production.up.railway.app/api/getAllAppointments`;
       }else{
         return;
@@ -270,6 +275,7 @@ function showDoctors() {
       if (response.ok) {
         try{
             const responseData = await response.json();
+            //verificar si la respuesta es una rray y si tiene elementos
             if (Array.isArray(responseData) && responseData.length > 0) {
               citas = responseData[0];
               console.log(citas);

@@ -58,12 +58,12 @@ function showLoader() {
     loader.style.display = 'none'; // Mostrar el loader
   }
 
-// Mostrar pacientes al cargar la página
+  //verificacion de permisos del usuario
 window.addEventListener('DOMContentLoaded', async () => {
   try {
     const token = localStorage.getItem('token');
 
-    //verificacion de permisos
+    //api para obtener los permisos de usuario
     const permisosRol = await fetch(`https://endpointsco-production.up.railway.app/api/get-user`, {
       method: 'GET',
       headers: {
@@ -82,7 +82,7 @@ window.addEventListener('DOMContentLoaded', async () => {
         patients = responseData[0]; // Accedemos al array de pacientes dentro del objeto de respuesta
         console.warn("Tiene permisos suficientes");
         //carga lista de pacientes
-        cargarListaPacientes(token, 3);
+        cargarListaPacientes(token, 3);// Cargar la lista
       } else {
         console.error("NOOO Tiene permisos suficionetes");
 
@@ -184,12 +184,13 @@ function searchPatients(e) {
     console.warn(document.getElementById('formulario').value);
 
     const searchTerm = (document.getElementById('formulario').value);
+    //logitud menor o = a 19
     if (searchTerm.length <= 10) {
         console.log(patients);
         const filteredPatients = patients.filter((patient) => {
           return patient.identity_card_user.toLowerCase().slice(0,10).search(searchTerm) != -1;
       });
-
+      //muestra usuario
       if (filteredPatients.length === 0) {
         // Mostrar mensaje de "No existe"
         patientList.innerHTML = `<tr><td colspan="9">No existe ningún paciente con ese número de identificación.</td></tr>`;
@@ -203,8 +204,11 @@ function searchPatients(e) {
 
 // Función para mostrar los pacientes filtrados
 function showFilteredPatients(filteredPatients) {
+    //inicializa la variable html como una cadena vacio (construir el contenido html)
     let html = '';
+    //enumerar
     let i = 1;
+    //filtrar
     filteredPatients.forEach((patient) => {
       html += `
         <tr>
@@ -282,6 +286,7 @@ function showFilteredPatients(filteredPatients) {
       }
 
     // Validaciones
+    //verificacion que los campos ingresados sean validos
     if (!validateNames(names)) {
       showError('names', 'Ingrese un nombre válido');
       hideLoader();
