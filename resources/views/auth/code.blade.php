@@ -21,6 +21,6 @@
   <!-- Modal de advertencia -->
   @include('components.modalWarning')
 
-  <script src="assets/assets/js/code.js"></script>
+  <script src="assets/js/code.js"></script>
 </body>
 </html>
