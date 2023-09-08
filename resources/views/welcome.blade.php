@@ -91,7 +91,7 @@
           <div class="row">
             <div class="col-lg-9 d-flex flex-column align-items-center text-center">
               <h3 class="mb-4 d-inline-block">Horario de atención</h3><br>
-              <p class="mb-0">Lunes a viernes 9:00 a.m - 7:30 p.m</p>
+              <p class="mb-0">Lunes a viernes 9:00 a.m - 8:00 p.m</p>
               <p class="mb-0">Sábado 9:00 a.m - 7:00 p.m</p>
               <p class="mb-0">Domingo 10:00 a.m - 2:00 p.m</p>
             </div>
