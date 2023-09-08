@@ -68,7 +68,7 @@ async function updatePassword(e) {
     }
     // Validar que la contraseña nueva y la confirmación de contraseña coinciden
     if (passwordNew !== passwordConfirm) {
-        showError('confirm_password', 'Las contraseñas no coinciden');
+        showError('confirm_password', 'La nueva contraseña y confirmar contraseña no coinciden');
         hideLoader();
         return;
     } else {
