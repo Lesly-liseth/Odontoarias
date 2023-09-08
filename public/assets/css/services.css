@@ -184,9 +184,9 @@ input[type="text"] {
 }
 
 .error-message {
-    display: none;
+    display: block;
     color: red;
-    font-weight: bold;
+    font-size: 12px;
 }
 
 /* Estilo del modal */

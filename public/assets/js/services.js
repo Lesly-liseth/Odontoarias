@@ -205,6 +205,36 @@ async function handleRegisterService(e) {
     showLoader();
 
     const service = document.getElementById('service').value;
+
+    // Función para mostrar el mensaje de error bajo el campo de entrada
+    function showError(fieldId, message) {
+        const errorElement = document.getElementById(fieldId + '_error');
+        errorElement.textContent = message;
+        errorElement.style.display = 'block';
+      }
+
+      // Función para ocultar el mensaje de error bajo el campo de entrada
+      function hideError(fieldId) {
+        const errorElement = document.getElementById(fieldId + '_error');
+        errorElement.style.display = 'none';
+      }
+
+          //verificacion que los campos ingresados sean validos
+    if (!validateService(service)) {
+        showError('service', 'Ingrese un nombre válido');
+        hideLoader();
+      } else {
+        hideError('service');
+      }
+
+       // Si hay errores en algún campo, detener el proceso de registro
+       const errors = document.getElementsByClassName('error-message');
+       for (let i = 0; i < errors.length; i++) {
+         if (errors[i].style.display === 'block') {
+           return;
+         }
+       }
+
     const data = {
       description: service
     };
@@ -240,6 +270,11 @@ async function handleRegisterService(e) {
         // Ocultar el indicador de carga después de enviar la solicitud (independientemente de si fue exitosa o no)
         hideLoader();
     }
+}
+
+function validateService(service) {
+    const serviceRegex = /^[a-zA-ZñÑ\s]{3,}$/;
+    return serviceRegex.test(service);
 }
 
 //funcion para eliminar
