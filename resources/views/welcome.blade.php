@@ -50,8 +50,8 @@
       <nav id="navbar" class="navbar">
         <ul>
           <li><a class="nav-link scrollto active" href="#hero">Inicio</a></li>
-          <li><a class="nav-link scrollto" href="#cta">Horario de Atencion</a></li>
-          <li><a class="nav-link scrollto" href="#team">Odontologos</a></li>
+          <li><a class="nav-link scrollto" href="#cta">Horario de Atención</a></li>
+          <li><a class="nav-link scrollto" href="#team">Odontólogos</a></li>
           </li>
           <li><a class="nav-link scrollto" href="#contact">Contáctanos</a></li>
           <li><a class="getstarted scrollto" href="{{ route('login') }}">Ingresar</a></li>
@@ -69,7 +69,7 @@
       <div class="row">
         <div class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="200">
           <h1>Cuida De Tus Dientes Somos Expertos En Sonrisas</h1>
-          <h2>Somos un equipo de Odontológos buscamos mejorar tu salud oral.</h2>
+          <h2>Somos un equipo de Odontólogos buscamos mejorar tu salud oral.</h2>
           <div class="d-flex justify-content-center justify-content-lg-start">
             <a href="{{ route('login') }}" class="btn-get-started scrollto">Ingresar</a>
           </div>

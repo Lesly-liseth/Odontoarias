@@ -89,7 +89,7 @@
           </div>
 
           <div class="field">
-            <label class="label">Cédula: </label>
+            <label class="label">Número de Cédula: </label>
             <div class="control">
               <input class="input" type="text" id="idnumber" name="identity_card_user" placeholder="Ingrese su número de cédula" required>
               <span id="idnumber_error" class="error-message" style="display: none;"></span>
@@ -105,7 +105,7 @@
           </div>
 
           <div class="field">
-            <label class="label">Teléfono: </label>
+            <label class="label">Número de Teléfono: </label>
             <div class="control">
               <input class="input" type="text" id="phone" name="phone" placeholder="Ingrese su número de teléfono" >
               <span id="phone_error" class="error-message" style="display: none;"></span>
@@ -166,14 +166,14 @@
       <section class="modal-card-body">
         <form id="edit-form">
           <div class="field">
-            <label class="label">Nombre:</label>
+            <label class="label">Nombres:</label>
             <div class="control">
               <input class="input" type="text" id="edit-names" required>
               <span id="edit-names_error" class="error-message" style="display: none;"></span>
             </div>
           </div>
           <div class="field">
-            <label class="label">Apellido:</label>
+            <label class="label">Apellidos:</label>
             <div class="control">
               <input class="input" type="text" id="edit-lastnames" required>
               <span id="edit-lastnames_error" class="error-message" style="display: none;"></span>
@@ -187,7 +187,7 @@
             </div>
           </div>
           <div class="field">
-            <label class="label">Teléfono:</label>
+            <label class="label">Número de Teléfono:</label>
             <div class="control">
               <input class="input" type="text" id="edit-phone" required>
               <span id="edit-phone_error" class="error-message" style="display: none;"></span>

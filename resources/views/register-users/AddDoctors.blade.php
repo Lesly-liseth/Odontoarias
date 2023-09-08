@@ -22,14 +22,14 @@
     </span>
       <!-- ENCABEZADO -->
   <header>
-    <h1 class="title">Registrar Odontologos</h1>
+    <h1 class="title">Registrar Odontólogos</h1>
   </header>
 
   <!-- MAIN -->
   <input type="hidden" name="_token" id="_token" value="<?php echo csrf_token();?>">
   <main class="main-content">
     <div class="crud-container">
-      <h1 class="crud-title">Odontologos Registrados</h1>
+      <h1 class="crud-title">Odontólogos Registrados</h1>
       <div class="search-bar">
 
         <input type="text" id="formulario" class="form-control my-2">
@@ -38,7 +38,7 @@
       <div class="crud-header">
         <button class="button is-success" id="openRegisterModal">
           <i class="fa-solid fa-plus"></i>
-          <span>Nuevo Odontologo</span>
+          <span>Nuevo Odontólogo</span>
         </button>
       </div>
       <table class="table" id="tablaUsuarios">
@@ -66,7 +66,7 @@
     <div class="modal-background"></div>
     <div class="modal-card">
       <header class="modal-card-head">
-        <p class="modal-card-title">Registrar Nuevo Odontologo</p>
+        <p class="modal-card-title">Registrar Nuevo Odontólogo</p>
         <button class="delete" aria-label="close" id="cerrarRegisterModal"></button>
       </header>
       <section class="modal-card-body">
@@ -99,7 +99,7 @@
           </div>
 
           <div class="field">
-            <label class="label">Cédula: </label>
+            <label class="label">Número de Cédula: </label>
             <div class="control">
               <input class="input" type="text" id="idnumber" name="identity_card_user" placeholder="Ingrese su número de cédula" required>
               <span id="idnumber_error" class="error-message" style="display: none;"></span>
@@ -115,7 +115,7 @@
           </div>
 
           <div class="field">
-            <label class="label">Teléfono: </label>
+            <label class="label">Número de Teléfono: </label>
             <div class="control">
               <input class="input" type="text" id="phone" name="phone" placeholder="Ingrese su número de teléfono" >
               <span id="phone_error" class="error-message" style="display: none;"></span>
@@ -191,7 +191,7 @@
             </div>
           </div>
           <div class="field">
-            <label class="label">Apellido:</label>
+            <label class="label">Apellidos:</label>
             <div class="control">
               <input class="input" type="text" id="edit-lastnames" required>
               <span id="edit-lastnames_error" class="error-message" style="display: none;"></span>
@@ -205,7 +205,7 @@
             </div>
           </div>
           <div class="field">
-            <label class="label">Teléfono:</label>
+            <label class="label">Número de Teléfono:</label>
             <div class="control">
               <input class="input" type="text" id="edit-phone" required>
               <span id="edit-phone_error" class="error-message" style="display: none;"></span>

@@ -30,12 +30,12 @@
             <button id="subir-imagen-button" class="subir-imagen-button">Subir imagen</button>
         </div>
         <div class="form-group">
-          <label for="names">Nombre:</label>
+          <label for="names">Nombres:</label>
           <input type="text" id="names" placeholder="Ingrese su nombre">
           <span class="error-message" id="names-error" style="display: none;"></span>
         </div>
         <div class="form-group">
-          <label for="lastnames">Apellido:</label>
+          <label for="lastnames">Apellidos:</label>
           <input type="text" id="lastnames" placeholder="Ingrese su apellido">
           <span class="error-message" id="lastnames-error" style="display: none;"></span>
         </div>
@@ -44,12 +44,12 @@
           <input type="text" id="idnumber" disabled>
         </div>
         <div class="form-group">
-          <label for="email">Correo Electrónico:</label>
+          <label for="email">Email:</label>
           <input type="email" id="email" placeholder="Ingrese su correo electrónico">
           <span class="error-message" id="email-error" style="display: none;"></span>
         </div>
         <div class="form-group">
-          <label for="phone">Número de Celular:</label>
+          <label for="phone">Número de Teléfono:</label>
           <input type="text" id="phone" placeholder="Ingrese su número de celular">
           <span class="error-message" id="phone-error" style="display: none;"></span>
         </div>

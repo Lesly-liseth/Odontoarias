@@ -123,6 +123,11 @@ input[type="tel"]{
     cursor: not-allowed;
   }
 
+h1{
+    font-size: 40px;
+    font-weight: bold;
+}
+
 /* mensajes de error en las validaciones*/
 .error-message {
     display: block;
