@@ -221,7 +221,7 @@ async function handleRegisterService(e) {
 
           //verificacion que los campos ingresados sean validos
     if (!validateService(service)) {
-        showError('service', 'Ingrese un nombre válido');
+        showError('service', 'Ingrese un servicio válido');
         hideLoader();
       } else {
         hideError('service');
