@@ -232,17 +232,38 @@ window.addEventListener('load', () => {
     const profilePicture = document.querySelector('.profile-picture');
     const descriptionField = document.getElementById('description');
     const descriptionField1 = document.getElementById('description1');
+    const rol1Title = document.getElementById('rol1');
+    const rol2Title = document.getElementById('rol2');
+    const rol3Title = document.getElementById('rol3');
 
-    if (perfil_usuario == 2) {
+    // Ocultar todos los títulos de rol inicialmente
+    rol1Title.style.display = 'none';
+    rol2Title.style.display = 'none';
+    rol3Title.style.display = 'none';
+
+    if (perfil_usuario == 1) {
+      rol1Title.style.display = 'block';
+      profilePicture.style.display = 'none';
+      descriptionField.style.display = 'none';
+      descriptionField1.style.display = 'none';
+    } else if (perfil_usuario == 2) {
+      rol2Title.style.display = 'block';
       profilePicture.style.display = 'block';
       descriptionField.style.display = 'block';
       descriptionField1.style.display = 'block';
+    } else if (perfil_usuario == 3) {
+      rol3Title.style.display = 'block';
+      profilePicture.style.display = 'none';
+      descriptionField.style.display = 'none';
+      descriptionField1.style.display = 'none';
     } else {
+      // Si el usuario tiene un rol desconocido
       profilePicture.style.display = 'none';
       descriptionField.style.display = 'none';
       descriptionField1.style.display = 'none';
     }
   });
+
 
 // Funciones de validación
 function validateNames(names) {

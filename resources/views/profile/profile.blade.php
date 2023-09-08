@@ -18,6 +18,9 @@
   <div class="container">
     <div class="profile-section">
       <h1>Mi Perfil</h1>
+      <h2 id="rol1">Administrador</h2>
+      <h2 id="rol2">Odontólogo</h2>
+      <h2 id="rol3">Paciente</h2>
 
       <form id="profile-form">
         <div class="profile-picture">
