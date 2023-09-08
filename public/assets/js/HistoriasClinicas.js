@@ -82,11 +82,10 @@ function abrirModal(event) {
 function cerrarModalSinDespintar() {
     modal.classList.remove('is-active');
     cuadradoSeleccionado = null; // Corrección: Debe ser "null" en lugar de "nulo"
-    //Realiza un bucle a través de todos los elementos en la lista cuadrados
+
     cuadrados.forEach(cuadrado => {
-      //se obtiene el número de cuadrado
       const cuadradoNumber = cuadrado.dataset.number;
-        //verifica si contiene un valor. 
+
       if (estilosCuadrados[cuadradoNumber]) {
         cuadrado.style.backgroundColor = estilosCuadrados[cuadradoNumber];
         // Restaurar el color original del cuadro
@@ -201,7 +200,6 @@ window.addEventListener('DOMContentLoaded', event => {
        GetHistoriasClinicas(cedula);
    }
 }
-
    $('#guardarAntecedentes').hide();
    $('#openNewServiceModal').hide();
    if(perfil_usuario==2){
@@ -218,6 +216,7 @@ window.addEventListener('DOMContentLoaded', event => {
 //funcionn para obtener los historias clinicas
 async function GetHistoriasClinicas(identificacion){
   console.log('load...');
+
     try {
     // Show the loader before making the API request
     showLoader();

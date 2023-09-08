@@ -56,9 +56,6 @@ function displayPatients(patientsData) {
         <td>${identity_card_user}</td>
         <td>${names}</td>
         <td>${surnames}</td>
-        <td>
-          <button class="btn-history" data-patient-id="${patient.identity_card_user}">Historia Clínica</button>
-        </td>
       `;
 
       patientsTableBody.appendChild(row);
@@ -119,24 +116,33 @@ function displayPatients(patientsData) {
 
 // Función para buscar odontólogos por numero de cedula
 function searchPatients(e) {
-  e.preventDefault();
-  console.warn(document.getElementById('search-input').value);
-  //const searchTerm = searchForm.value.toLowerCase();
-  const searchTerm = (document.getElementById('search-input').value);
-  if (searchTerm.length <= 10) {
-    const filteredPatiens = pacientes.filter((patient) => {
-      return patient.identity_card_user.toLowerCase().slice(0, 10).search(searchTerm) != -1;
+    e.preventDefault();
+
+    // Obtener el valor del campo de búsqueda
+    const searchTerm = document.getElementById('search-input').value.trim();
+
+    // Verificar si el campo de búsqueda está vacío
+    if (searchTerm === '') {
+        showWarningModal('Por favor, ingrese un número para realizar la búsqueda.');
+        return; // Salir de la función si está vacío
+    }
+
+    // Verificar si el campo de búsqueda tiene más de 10 caracteres
+    if (searchTerm.length > 10) {
+        showWarningModal('Para la búsqueda, ingrese solo 10 caracteres');
+        return;
+    }
+
+    const filteredPatients = pacientes.filter((patient) => {
+        return patient.identity_card_user.toLowerCase().slice(0, 10).search(searchTerm) != -1;
     });
 
-    if (filteredPatiens.length === 0) {
-      // Mostrar mensaje de "No existe"
-      doctorList.innerHTML = `<tr><td colspan="9">No existe ningún Odontólogo con ese número de identificación.</td></tr>`;
+    if (filteredPatients.length === 0) {
+        // Mostrar mensaje de "No existe"
+        doctorList.innerHTML = `<tr><td colspan="9">No existe ningún Paciente con ese número de cedula.</td></tr>`;
     } else {
-      showFilteredPatients(filteredPatiens);
+        showFilteredPatients(filteredPatients);
     }
-  } else {
-    showWarningModal(`Para la busqueda ingrese solo 10 caracteres`);
-  }
 }
 
 // Función para mostrar los odontologos filtrados
@@ -151,7 +157,7 @@ function showFilteredPatients(filteredPatiens) {
         <td>${patient.names}</td>
         <td>${patient.surnames}</td>
         <td>
-          <button class="btn-history" data-patient-id="${patient.id}">Historia Clínica</button>
+          <button class="btn-history" data-patient-id="${patient.identity_card_user} ">Historia Clínica</button>
         </td>
       </tr>
     `;

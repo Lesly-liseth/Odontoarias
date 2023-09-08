@@ -1,7 +1,7 @@
 @extends('topics.topic')
 @section('contenido')
 <link rel="stylesheet" href="assets/css/listPatients.css">
-<link rel="stylesheet" type="text/css" href="assets/css/load.css">
+{{--  <link rel="stylesheet" type="text/css" href="assets/css/load.css">  --}}
 
 <body>
     <div class="overlay" id="overlay"></div>

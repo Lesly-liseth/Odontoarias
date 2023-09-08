@@ -29,11 +29,11 @@
     <div class="rectangulo">
 
       <div id="informacion-paciente" class="information">
-        <label for="id">Id:</label>
+        <label for="id">Número de historia clínica:</label>
         <input type="text" id="id" readonly/>
 
         <label for="id-number">Cedúla:</label>
-        <input type="text" id="id-number" readonly />
+        <input type="text" id="id-number" name="identity_card_user" readonly/>
 
         <label for="names">Nombres:</label>
         <input type="text" id="names" readonly/>
