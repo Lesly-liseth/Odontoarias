@@ -182,7 +182,7 @@ document.querySelector('.btn-registro').addEventListener('click', async function
   }
 
   function validateAddress(address) {
-    const addressRegex = /^[añÑ-zA-Z0-9\- ]+$/;
+    const addressRegex = /^[a-zA-ZñÑ0-9\- ]+$/;
     return addressRegex.test(address);
   }
 
