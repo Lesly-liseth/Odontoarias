@@ -106,7 +106,7 @@
       <section id="team" class="team section-bg">
         <div class="container" data-aos="fade-up">
           <div class="section-title">
-            <h2>Odontológos</h2>
+            <h2>Odontólogos</h2>
             <p>¡Sonríe con confianza! Nuestros odontólogos altamente capacitados ofrecen atención personalizada, utilizando las últimas técnicas y tecnologías para brindarte una sonrisa saludable y radiante. Descubre el confort y la excelencia en cada visita, junto con un enfoque cálido y amigable hacia tu bienestar bucal.</p>
           </div>
           <div class="row" id="team-members">
